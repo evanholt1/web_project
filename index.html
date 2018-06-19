@@ -6,48 +6,110 @@
   <title>Silverline Gym™ jo</title>
   <style>
     body {
-      background-color: black;
-      margin: 5px 175px;
-    }
+      background-color: #111111;
+      margin: 0px 175px;
+
+}
+#body {
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
     p { color : white;}
     hr {
       border-width: 5px;
       text-align:center;
     }
+    div.sticky {
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: black;
+  border-bottom: 2px solid white;
+}
+a {
+  padding : 0px 5px;
+}
+.mainPage {
+  height: 1000px;
+  width: 80%;
+  padding-top:70px;
+}
   </style>
+  <script type="text/javascript">
+        function ScrollBy100 () {
+            window.scrollBy (0,-100);
+        }
+    </script>
+
 </head>
 <body>
-  <div>
-    <img src="images/logo.png" alt="Silverline Gym" width ="120" height ="120"/>
-    <img src="images/name1.png" alt="Silverline Gym" width ="150" height ="200"/>
+  <div class = "sticky">
+    <img src="images/logo.png" alt="Silverline Gym Logo" width ="120" height ="120" style=""/>
+    <img src="images/name1.png" alt="Silverline Gym" width ="140" height ="140" style="position:relative;top:5px"/>
+
+    <div class="header" style="position:relative;left:265px">
+    <a href="index.html"  >Main</a>
+    <a href="#about_us" onclick="ScrollBy100 ()">About Us</a>
+    <a href="#facilities" onclick="ScrollBy100 ()">Facilities</a>
+    <a href="#trainers">Trainers</a>
+    <a href="#memberships">Membership</a>
+    <a href="#time">Time Table</a>
+    <a href="#contact">contact Us</a>
   </div>
-  <div style="background-color: black;">
-    <a href="index.html">Main</a>
-    <a href="about.html">About Us</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="trainers.html">Trainers</a>
-    <a href="memberships.html">Membership</a>
-    <a href="time.html">Time Table</a>
-    <a href="contact.html">contact Us</a>
   </div>
 
-  <hr>
-
-  <div style="color:white" class="about-mini">
+  <div id="page1">
+  <a id="about_us" class="smooth"></a>
+  <div style="color:white;" class="about-mini">
     <img src="images/weightlifting-main.png" alt="Weightlifting" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
     <h1 style="color:#C0C0C0">Welcome to Silverline Gym (Jordan Chapter)</h1>
     <p>We are the original, the place where it all began.</p>
-	<p>More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.</p>
-	<p>Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.</p>
-	<p>Silverline Gym... Become a Better You™ ."</p>
+  <p>More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.</p>
+  <p>Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.</p>
+  <p>Silverline Gym... Become a Better You™ ."</p>
   </div>
+</div>
+
+<div id="page2">
+  <a id="facilities" class="smooth"></a>
+  <div style="background-color: #C0C0C0;" class="facilities-mini">
+    <h1 style="color:white">One Place. Endless Opportunities.</h1>
+  <p style="color:black;">Silverline Gym is a place where fitness, science, education and research come together under one roof. And it’s where new ideas and effective solutions for health and wellness are constantly being developed.</p>
+  <p style="color:black;">With over 94,000 square feet in the newly refurbished main Texas branch that’s home to the world’s most advanced approach to whole-body fitness, you’ll find everything you need to gain measurably improved general fitness and a new, improved perspective on life.</p>
+  <img src="images/facilities-main.jpg" alt="facilities" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+  </div>
+</div>
+
+<!-- <div id="page3">
+  <a id="contact" class="smooth"></a>
+    Contact page content goes here.
+</div> -->
+
+<p onclick="ScrollBy100 ()">Scroll the document vertically by 100 pixels!</p>
   <hr>
 
-  <div style="color:white" class="facilities-mini">
-    <h1 style="color:#C0C0C0">One Place. Endless Opportunities.</h1>
-	<p>Silverline Gym is a place where fitness, science, education and research come together under one roof. And it’s where new ideas and effective solutions for health and wellness are constantly being developed.</p>
-	<p>With over 94,000 square feet in the newly refurbished main Texas branch that’s home to the world’s most advanced approach to whole-body fitness, you’ll find everything you need to gain measurably improved general fitness and a new, improved perspective on life.</p>
-	<img src="images/facilities-main.jpg" alt="facilities" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-  </div>
+
+
+<footer>
+  <hr>
+  <img src="images/logo_footer.png" alt="Silverline Gym Logo" width ="120" height ="120" style="position:relative;left:400px;top:-50px;"/>
+  <img src="images/name1_footer.png" alt="Silverline Gym" width ="150" height ="200" style="position:relative;left:430px;top:0px"/>
+
+  <div style="background-color:#111111;position:relative;left:465px;top:-30px;">
+    <br><p style="color:white;position:relative;left:45px;bottom:-10px;">follow us on :</p><br>
+  <a href="http://www.facebook.com"><img src="images/facebook.png" alt="Silverline Gym" width ="50" height ="50" /></a>
+  <a href="https://twitter.com/?lang=en"><img src="images/twitter.png" alt="Silverline Gym" width ="50" height ="50" /></a>
+  <a href="https://www.instagram.com/?hl=en"><img src="images/instagram.png" alt="Silverline Gym" width ="50" height ="50" /></a>
+</div >
+
+</footer>
+
+<!--<script>
+function scrollWin(x, y) {
+    window.scrollBy(x, y);-->
+}
+</script>
 </body>
 </html>
