@@ -3,51 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Silverline Gym™ jo</title>
+  <title>SILVERLINE GYM&trade; Jo</title>
   <style>
     body {
+	background-color:#202020;
+	margin: 0px 15%;
+	}
+	:target:before {
+	  content:"";
+      display:block;
+      height:195px; /* fixed header height*/
+      margin:-195px 0 0; /* negative fixed header height */
+    }
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color:black;
+	  width=100%;
+	  z-index:9999;
+	  margin:0px -21.2%;
+    }  
+    
+    ul {
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+	  overflow: hidden;
       background-color: black;
-      margin: 5px 175px;
+	  text-align:center;
+	}
+	li {
+      display:inline;
     }
-    p { color : white;}
-    hr {
-      border-width: 5px;
-      text-align:center;
+    li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
     }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #111;
+    }
+	hr {
+	  height: 5px;
+	  background-color:white;
+	  color:white;
+	}
+	.headers {
+	color:#C0C0C0;
+	font-family:verdana;
+	background-color:black;
+	}
+	p {
+	color:white;
+	}
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
   </style>
 </head>
 <body>
+  
+  <div class ="sticky">
+    <img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
+	<img src="images/name1.png" alt="Silverline Gym Logo" width="130" height="130"/>
+     <div class="stickynav">
+	  <ul>
+	    <li><a href="#top">HOME</a></li>
+	    <li><a href="#about">ABOUT US</a></li>
+	    <li><a href="#facilities">FACILITIES</a></li>
+	    <li><a href="#trainers">TRAINERS</a></li>
+	    <li><a href="#memberships">MEMBERSHIPS</a></li>
+	    <li><a href="#time">TIME TABLE</a></li>
+	    <li><a href="#contact">CONTACT US</a></li>
+	  </ul>
+	  <hr>
+    </div>
+  </div>
+  
+  <div class="container">
+  <img src="images/weightlifting-main.png" alt="main" style="opacity:0.9;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+  <div class="centered" style="font-family:impact;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color:white;font-size:35px;opacity:0.9;"><h1 style="background-color:transparent;font-family:impact;color:#C0C0C0">&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
+  </div>
+  
+  
+
+ <div id="about" style="color:white;">
+ <h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO SILVERLINE GYM JO</h1>
+    <p>We are the original, the place where it all began.<br><br>
+       More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
+       Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
+       Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
+       When Armand Moreno opened the first Silverline Gym, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
+       Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
+  <h2><em>Silverline Gym</em>... Become a Better You&trade; ."</h2>
+ </div>
+ 
+  <div class="headers" id="about" >
+    <h1 >ABOUT US</h1>
+  </div>
   <div>
-    <img src="images/logo.png" alt="Silverline Gym" width ="120" height ="120"/>
-    <img src="images/name1.png" alt="Silverline Gym" width ="150" height ="200"/>
+	<div>
+	<img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+    <p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym</em></strong> branch.<br><br>
+    It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
+	</div>
+	
+	<div>
+	<img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+	<p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
+	</div>
+	
+	<div class="clearfix">
+	<img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+	<p><br>The grand opening of the 13th <strong><em>Silverline Gym</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
+	The Dubai branch was also the first <strong><em>Silverline Gym</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
+    </div>
+	
+	<div class="clearfix">
+		<img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+	<br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of Silverline Gym is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
+	   The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
+	   Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
+	
+	</div>
   </div>
-  <div style="background-color: black;">
-    <a href="index.html">Main</a>
-    <a href="about.html">About Us</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="trainers.html">Trainers</a>
-    <a href="memberships.html">Membership</a>
-    <a href="time.html">Time Table</a>
-    <a href="contact.html">contact Us</a>
-  </div>
+  
 
-  <hr>
-
-  <div style="color:white" class="about-mini">
-    <img src="images/weightlifting-main.png" alt="Weightlifting" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-    <h1 style="color:#C0C0C0">Welcome to Silverline Gym (Jordan Chapter)</h1>
-    <p>We are the original, the place where it all began.</p>
-	<p>More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.</p>
-	<p>Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.</p>
-	<p>Silverline Gym... Become a Better You™ ."</p>
-  </div>
-  <hr>
-
-  <div style="color:white" class="facilities-mini">
-    <h1 style="color:#C0C0C0">One Place. Endless Opportunities.</h1>
-	<p>Silverline Gym is a place where fitness, science, education and research come together under one roof. And it’s where new ideas and effective solutions for health and wellness are constantly being developed.</p>
-	<p>With over 94,000 square feet in the newly refurbished main Texas branch that’s home to the world’s most advanced approach to whole-body fitness, you’ll find everything you need to gain measurably improved general fitness and a new, improved perspective on life.</p>
-	<img src="images/facilities-main.jpg" alt="facilities" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-  </div>
 </body>
 </html>
