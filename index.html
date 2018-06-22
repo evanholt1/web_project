@@ -9,13 +9,15 @@
 	background-color:#202020;
 	margin: 0px 15%;
 	}
+	
 	:target:before {
 	  content:"";
       display:block;
       height:195px; /* fixed header height*/
       margin:-195px 0 0; /* negative fixed header height */
     }
-    .sticky {
+    
+	.sticky {
       position: sticky;
       top: 0;
       background-color:black;
@@ -24,7 +26,7 @@
 	  margin:0px -21.2%;
     }  
     
-    ul {
+    .sticky ul {
       list-style-type: none;
       margin: 0 auto;
       padding: 0;
@@ -32,10 +34,12 @@
       background-color: black;
 	  text-align:center;
 	}
-	li {
+	
+	.sticky li {
       display:inline;
     }
-    li a {
+    
+	.sticky li a {
       display: inline-block;
       color: white;
       text-align: center;
@@ -44,36 +48,56 @@
     }
 
     /* Change the link color to #111 (black) on hover */
-    li a:hover {
+    .sticky li a:hover {
       background-color: #111;
     }
-	hr {
-	  height: 5px;
-	  background-color:white;
-	  color:white;
-	}
+
 	.headers {
 	color:#C0C0C0;
 	font-family:verdana;
 	background-color:black;
 	}
-	p {
+	
+	p ,th {
 	color:white;
 	}
-    .clearfix::after {
+    
+	.clearfix::after {
       content: "";
       clear: both;
       display: table;
     }
-
-
+	
+	.fling-minislide {width:350px; height:300px; overflow:hidden;  }
+	.fling-minislide img{ position:absolute; animation:fling-minislide 40s infinite; opacity:0;  width:997px; height: 450px;}
+	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}} 
+	.fling-minislide img:nth-child(8){animation-delay:0s;}
+	.fling-minislide img:nth-child(7){animation-delay:5s;}
+	.fling-minislide img:nth-child(6){animation-delay:10s;}
+	.fling-minislide img:nth-child(5){animation-delay:15s;}
+	.fling-minislide img:nth-child(4){animation-delay:20s;}
+	.fling-minislide img:nth-child(3){animation-delay:25s;}
+	.fling-minislide img:nth-child(2){animation-delay:30s;}
+	.fling-minislide img:nth-child(1){animation-delay:35s;}
+	
+	.careers, .memberships {
+	color:white;
+	}
+	
+	input {
+	padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border: none;
+    border-bottom: 2px solid red;
+	}
   </style>
 </head>
 <body>
   
   <div class ="sticky">
     <img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
-	<img src="images/name1.png" alt="Silverline Gym Logo" width="130" height="130"/>
+	<img src="images/name1.png" alt="Silverline Gym Name" width="130" height="130"/>
      <div class="stickynav">
 	  <ul>
 	    <li><a href="#top">HOME</a></li>
@@ -84,58 +108,164 @@
 	    <li><a href="#time">TIME TABLE</a></li>
 	    <li><a href="#contact">CONTACT US</a></li>
 	  </ul>
-	  <hr>
+	  <hr style="height: 5px;background-color:white;color:white;">
     </div>
   </div>
-  
-  <div class="container">
-  <img src="images/weightlifting-main.png" alt="main" style="opacity:0.9;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-  <div class="centered" style="font-family:impact;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color:white;font-size:35px;opacity:0.9;"><h1 style="background-color:transparent;font-family:impact;color:#C0C0C0">&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
-  </div>
-  
-  
-
- <div id="about" style="color:white;">
- <h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO SILVERLINE GYM JO</h1>
-    <p>We are the original, the place where it all began.<br><br>
-       More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
-       Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
-       Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
-       When Armand Moreno opened the first Silverline Gym, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
-       Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
-  <h2><em>Silverline Gym</em>... Become a Better You&trade; ."</h2>
- </div>
- 
-  <div class="headers" id="about" >
-    <h1 >ABOUT US</h1>
-  </div>
-  <div>
-	<div>
-	<img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-    <p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym</em></strong> branch.<br><br>
-    It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
+    
+	<div class="main-section">
+	  <div class="main-image">
+		<img src="images/weightlifting-main.png" alt="main" style="opacity:0.9;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+		<div class="centered" style="font-family:impact;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color:white;font-size:35px;opacity:0.9;"><h1 style="background-color:transparent;font-family:impact;color:#C0C0C0">&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
+	  </div>
+	  
+	  <div id="Main">
+		<h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
+		<p>We are the original, the place where it all began.<br><br>
+		   More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
+		   Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
+		   Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
+		   When Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong>, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
+		   Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
+		<h2><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
+	  </div>
 	</div>
 	
-	<div>
-	<img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-	<p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
-	</div>
-	
-	<div class="clearfix">
-	<img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-	<p><br>The grand opening of the 13th <strong><em>Silverline Gym</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
-	The Dubai branch was also the first <strong><em>Silverline Gym</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
+	<div class="about us section" id="about">
+	  <div class="headers">
+		<h1 >ABOUT US</h1>
+	  </div>
+	  <div>
+		<div>
+		<img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+		<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
+		It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
+		</div>
+		
+		<div>
+		<img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+		<p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
+		</div>
+		
+		<div class="clearfix">
+		<img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+		<p><br>The grand opening of the 13th <strong><em>Silverline Gym&trade;</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
+		The Dubai branch was also the first <strong><em>Silverline Gym&trade;</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
+		</div>
+		
+		<div class="clearfix">
+			<img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
+		<br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
+		   The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
+		   Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
+		</div>
+	  </div>
     </div>
-	
-	<div class="clearfix">
-		<img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-	<br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of Silverline Gym is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
-	   The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
-	   Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
-	
-	</div>
-  </div>
-  
 
+	<div class="facilities section" id="facilities">
+	  <div class="headers">
+	    <h1 >FACILITIES</h1>
+	  </div>
+	  <div class="fling-minislide">
+        <img src="images/facilities7.png" alt="Slide 8" />
+        <img src="images/facilities6.png" alt="Slide 7" />
+        <img src="images/facilities5.png" alt="Slide 6" />
+        <img src="images/facilities4.png" alt="Slide 5" />
+        <img src="images/facilities3.png" alt="Slide 4" />
+        <img src="images/facilities2.png" alt="Slide 3" />
+        <img src="images/facilities1.png" alt="Slide 2" />
+        <img src="images/facilities0.png" alt="Slide 1" />
+      </div>
+	</div>
+	
+	<br><br><br><br><br><br><br><br>
+	<div class="trainers section" id="trainers">
+	  <div class="headers">
+	    <h1 >TRAINERS</h1>
+	  </div>
+	</div>
+	
+	<div class="memberships section" id="memberships">
+	  <div class="headers">
+	    <h1 >MEMBERSHIPS</h1>
+	  </div>
+	  <h2>With <strong><em>Silverline Gym&trade;</em></strong>  Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
+	    entirely online!<h2>
+		<h3>Just enter the required info below to register:<br></h3>
+	  <form method="post" action="" >
+		<label>Name</label><input type="text" name="inputname" maxlength="30" size="20">
+		
+		<label>4-digit Password *</label><input type="password" name="inputpassword" size="20">
+        
+		<label>Subscription</label>
+		<input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs "><label>One Month - 50JDs</label>  
+		<input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs "><label>Three Months - 90JDs</label>       
+		<input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs"><label>Six Months - 160JDs</label>         
+		<input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs"><label>One Year - 300JDs</label>
+                
+    <label>Special Subscriptions *</label>
+	<input type="checkbox" name="SpecialSubscriptionscheckbox"><label>None</label>
+	<input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Gym</label>
+    <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Osama Gym</label>
+    <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Mega Osama Gym</label>
+    <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Mega Osama Gym</label>
+    
+    <label>Payment Method</label><select>
+	<option>Visa</option><option>PayPal</option><option>Mastercard</option></select>
+	
+    <label>Card Number</label><input type="text" name="cardnumbertext" size="16" maxlength="16">
+      
+      <input type="submit" name="submit button" value="submit">
+      </form>
+    
+	<h5>* : info needed for private class room entry.</h5>
+	</div>
+	
+	<div class="time table section" id="time">
+	  <div class="headers">
+	    <h1 >TIME TABLE</h1>
+	  </div>
+	</div>
+	
+	<div class="contact us section" id="contact">
+	  <div class="headers">
+	    <h1 >CONTACT US</h1>
+	  </div>
+	  <div class="table">
+	    <table> 
+          <form method="post" action="">
+            <tr>
+		      <th>Name</th><th><input type="text" name="Name-textbox" size="20"/></th>
+		    </tr>
+            <tr>
+		      <th>E-Mail</th><th><input type="text" name="E-Mail-textbox" size"20"/></th>
+		    </tr>
+			<tr>
+			  <th>Phone Number</th><th><input type="text" name="PhoneNumber-textbox" size"20" maxlength="10"/></th>
+			</tr>
+			<tr></tr><tr></tr><tr></tr><tr></tr> <!--just to leave some space between the textboxes and the textarea -->
+			<tr>
+			  <th><label>Message:</label></th><th><textarea cols="50" rows="10"></textarea></th>
+			</tr>   
+			<tr>
+			  <th><input type="submit" name="submit tbutton"/></th>
+			</tr>
+		  </form>
+		</table>
+	  </div>   
+      <div class="careers">
+		<br>
+		<h1 style="color:#C0C0C0;font-family:verdana;">CAREERS</h1>
+		<h4>Silver Line Gym is looking for professionals in the following fields:</h4>
+		<ul>
+		  <li>Personal Trainers </li>
+		  <li>group Exercise Instructors</li>
+		  <li>Lifeguards</li>
+		  <li>Security Attendants</li>
+		  <li>Female Maintenance Technician</li>
+		</ul>
+		<h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family, and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
+	  </div>
+	</div>
+	
 </body>
 </html>
