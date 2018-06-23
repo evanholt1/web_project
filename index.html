@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SILVERLINE GYM&trade; Jo</title>
   <style>
-    body {
+    /* generally, for the whole page : */
+	body {
 	background-color:#202020;
 	margin: 0px 15%;
 	}
 	
+	/* to fix issue with sticky overlapping when scrolling to a section above : */
 	:target:before {
 	  content:"";
       display:block;
       height:195px; /* fixed header height*/
       margin:-195px 0 0; /* negative fixed header height */
     }
-    
+	
+    /* all .sticky are for the 'sticky' vanigation bar and logo */
 	.sticky {
       position: sticky;
       top: 0;
@@ -47,27 +50,31 @@
       text-decoration: none;
     }
 
-    /* Change the link color to #111 (black) on hover */
+    /* Change the link color of a navigation bar in sticky to #111 (black) on hover */
     .sticky li a:hover {
       background-color: #111;
     }
-
+	
+	/* for titles of sections: */
 	.headers {
 	color:#C0C0C0;
 	font-family:verdana;
 	background-color:black;
 	}
 	
-	p ,th {
+	/* generally,for all body text : */
+	p ,th , .careers, .memberships{
 	color:white;
 	}
-    
+	
+    /* to position images left or right of text: */
 	.clearfix::after {
       content: "";
       clear: both;
       display: table;
     }
 	
+	/* so facilities animation works */
 	.fling-minislide {width:350px; height:300px; overflow:hidden;  }
 	.fling-minislide img{ position:absolute; animation:fling-minislide 40s infinite; opacity:0;  width:997px; height: 450px;}
 	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}} 
@@ -80,16 +87,20 @@
 	.fling-minislide img:nth-child(2){animation-delay:30s;}
 	.fling-minislide img:nth-child(1){animation-delay:35s;}
 	
-	.careers, .memberships {
-	color:white;
-	}
-	
+	/* for forms (after removing tables) */
 	input {
 	padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 	border: none;
     border-bottom: 2px solid red;
+	}
+	
+	/* footer styling*/
+	
+	footer {
+	background-color:black;
+	text-align:center; /* for images in center*/
 	}
   </style>
 </head>
@@ -230,27 +241,23 @@
 	  <div class="headers">
 	    <h1 >CONTACT US</h1>
 	  </div>
-	  <div class="table">
-	    <table> 
+	  <!--
+	  <div>
+	    
           <form method="post" action="">
-            <tr>
-		      <th>Name</th><th><input type="text" name="Name-textbox" size="20"/></th>
-		    </tr>
-            <tr>
-		      <th>E-Mail</th><th><input type="text" name="E-Mail-textbox" size"20"/></th>
-		    </tr>
-			<tr>
-			  <th>Phone Number</th><th><input type="text" name="PhoneNumber-textbox" size"20" maxlength="10"/></th>
-			</tr>
-			<tr></tr><tr></tr><tr></tr><tr></tr> <!--just to leave some space between the textboxes and the textarea -->
-			<tr>
-			  <th><label>Message:</label></th><th><textarea cols="50" rows="10"></textarea></th>
-			</tr>   
-			<tr>
-			  <th><input type="submit" name="submit tbutton"/></th>
-			</tr>
+            
+		      Name<input type="text" name="Name-textbox" size="20"/>
+		    
+		      E-Mail<input type="text" name="E-Mail-textbox" size"20">
+		    
+			  Phone Number<input type="text" name="PhoneNumber-textbox" size"20" maxlength="10">
+			
+			  <label>Message:</label><textarea cols="50" rows="10">
+			
+			  <input type="submit" name="submit tbutton">
+			
 		  </form>
-		</table>
+		-->
 	  </div>   
       <div class="careers">
 		<br>
@@ -261,11 +268,23 @@
 		  <li>group Exercise Instructors</li>
 		  <li>Lifeguards</li>
 		  <li>Security Attendants</li>
-		  <li>Female Maintenance Technician</li>
+		  <li>Maintenance Technician</li>
 		</ul>
 		<h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family, and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
 	  </div>
 	</div>
 	
+	
+  <footer>
+    <hr>
+	<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
+	<img src="images/name1.png" alt="Silverline Gym Name" width="130" height="130"/>
+	<br>
+	<p>Follow us on:<br><br>
+	   <a href='http://www.facebook.com' alt='facebook page link'><img src="images/facebook.png" alt="Silverline Gym Name" width="50" height="50"/></a>
+	   <a href='http://www.twitter.com' alt='twitter accout link'><img src="images/twitter.png" alt="Silverline Gym Name" width="50" height="50"/></a>
+	   <a href='http://www.instagram.com' alt='instagram page link'><img src="images/instagram.png" alt="Silverline Gym Name" width="50" height="50"/></a>
+	</p>
+  </footer>
 </body>
 </html>
