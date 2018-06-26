@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> <!-- encoding-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SILVERLINE GYM&trade; Jo</title>
   <style>
-    /* generally, for the whole page : */
+    /* setting for the whole page : */
 	body {
 	background-color:#202020;
 	margin: 0px 15%;
 	}
-	
+
 	/* to fix issue with sticky overlapping when scrolling to a section above : */
 	:target:before {
 	  content:"";
       display:block;
-      height:195px; /* fixed header height*/
-      margin:-195px 0 0; /* negative fixed header height */
+      height:175px; /* fixed header height*/
+      margin:-175px 0 0; /* negative fixed header height */
     }
-	
+
     /* all .sticky are for the 'sticky' vanigation bar and logo */
 	.sticky {
       position: sticky;
@@ -26,8 +26,8 @@
       background-color:black;
 	  z-index:9999;
 	  margin:0px -21.2%;
-    }  
-    
+    }
+
     .sticky ul {
       list-style-type: none;
       margin: 0 auto;
@@ -36,11 +36,11 @@
       background-color: black;
 	  text-align:center;
 	}
-	
+
 	.sticky li {
       display:inline;
     }
-    
+
 	.sticky li a {
       display: inline-block;
       color: white;
@@ -53,30 +53,30 @@
     .sticky li a:hover {
       background-color: #111;
     }
-	
+
 	/* for titles of sections: */
 	.headers {
 	color:#C0C0C0;
 	font-family:verdana;
 	background-color:black;
 	}
-	
+
 	/* generally,for all body text : */
 	p ,th , .careers, .memberships{
 	color:white;
 	}
-	
+
     /* to position images left or right of text: */
 	.clearfix::after {
       content: "";
       clear: both;
       display: table;
     }
-	
+
 	/* so facilities animation works */
 	.fling-minislide {width:350px; height:300px; overflow:hidden;  }
 	.fling-minislide img{ position:absolute; animation:fling-minislide 40s infinite; opacity:0;  width:997px; height: 450px;}
-	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}} 
+	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
 	.fling-minislide img:nth-child(8){animation-delay:0s;}
 	.fling-minislide img:nth-child(7){animation-delay:5s;}
 	.fling-minislide img:nth-child(6){animation-delay:10s;}
@@ -85,49 +85,63 @@
 	.fling-minislide img:nth-child(3){animation-delay:25s;}
 	.fling-minislide img:nth-child(2){animation-delay:30s;}
 	.fling-minislide img:nth-child(1){animation-delay:35s;}
-	
+
 	/* for forms (after removing tables) */
-	input[type=text], input[type=password] {
+	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text*/
 	margin: 8px 0; /* empty space around input*/
-	padding : 6px 6px; /* interior size of input*/	
+	padding : 6px 6px; /* interior size of input*/
 	box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
 	background-color: #C0C0C0;
-    color: black;
+  color: black;/* text color */
 	}
-	
+
 	/* footer styling*/
 		footer {
 	background-color:black;
 	text-align:center; /* for images in center*/
 	}
-	
+
 	.membershipform {
 	margin: 0px 35%;
 	text-align:center;
 	}
-	
+
 	/*.specialsub {
 	position:relative;
 	left:400px;
 	top:-282px;
 	}*/
-	
+
 	.memberships h2, .memberships h3 {
 	text-align:center;
 	}
-	
+
 	.alignmember {
 	position:relative;
 	left:40px;
 	text-align:left;
 	}
+
+  .centered {
+  color:#C0C0C0;
+  font-family:impact;
+  position:absolute;/*these 3 lines are for correct positioning inside the image*/
+  top: 45%;left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:35px;
+  opacity:0.9;
+  }
+
+
+
+
   </style>
 </head>
 <body>
-  
-  <div class ="sticky">
-    <img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
-	<img src="images/name1.png" alt="Silverline Gym Name" width="130" height="130"/>
+
+  <div class ="sticky" style="height:150;">
+    <img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110"/>
+	<img src="images/name1.png" alt="Silverline Gym Name" width="110" height="110"/>
      <div class="stickynav">
 	  <ul>
 	    <li><a href="#top">HOME</a></li>
@@ -141,11 +155,11 @@
 	  <hr style="height: 5px;background-color:white;color:white;">
     </div>
   </div>
-    
+
   <div class="main-section">
 	<div class="main-image">
 	  <img src="images/weightlifting-main.png" alt="main" style="opacity:0.9;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
-	  <div class="centered" style="font-family:impact;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color:white;font-size:35px;opacity:0.9;"><h1 style="background-color:transparent;font-family:impact;color:#C0C0C0">&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
+	  <div class="centered"><h1  >&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
 	</div>
 	<div id="Main">
 	  <h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
@@ -158,8 +172,8 @@
 	  <h2><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
 	</div>
   </div>
-	
-	
+
+
   <div class="about us section" id="about">
 	<div class="headers">
 	  <h1 >ABOUT US</h1>
@@ -203,14 +217,14 @@
       <img src="images/facilities0.png" alt="Slide 1" />
     </div>
   </div>
-	
+
   <br><br><br><br><br><br><br><br>
   <div class="trainers section" id="trainers">
 	<div class="headers">
 	  <h1>TRAINERS</h1>
 	</div>
   </div>
-	
+
   <div class="memberships section" id="memberships">
 	<div class="headers">
 	  <h1>MEMBERSHIPS</h1>
@@ -228,9 +242,9 @@
 		  <input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs "><label>One Month - 50JDs</label>
 		  <br>
 		  <input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs "><label>Three Months - 90JDs</label>
-		  <br>     
+		  <br>
 		  <input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs"><label>Six Months - 160JDs</label>
-		  <br>     
+		  <br>
 		  <input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs"><label>One Year - 300JDs</label>
 		</div>
 		<h3>Special Subscriptions*:</h3>
@@ -253,36 +267,30 @@
     </form>
     <h5>* : info needed for private class room entry.</h5>
   </div>
-	
-	
+
+
   <div class="time table section" id="time">
 	<div class="headers">
 	  <h1>TIME TABLE</h1>
 	</div>
   </div>
-	
+
   <div class="contact us section" id="contact">
 	<div class="headers">
 	  <h1>CONTACT US</h1>
 	</div>
-	  <!--
-	  <div>
-	    
-          <form method="post" action="">
-            
-		      Name<input type="text" name="Name-textbox" size="20"/>
-		    
-		      E-Mail<input type="text" name="E-Mail-textbox" size"20">
-		    
-			  Phone Number<input type="text" name="PhoneNumber-textbox" size"20" maxlength="10">
-			
-			  <label>Message:</label><textarea cols="50" rows="10">
-			
-			  <input type="submit" name="submit tbutton">
-			
+
+	  <div class="contactform">
+          <form method="post" action="#">
+		      <p><label>Name </label><input type="text" name="Name" size="30"></p>
+		      <p><label>E-Mail </label><input type="email" name="E-Mail" size"20"></p>
+			    <p><label>Phone Number </label><input type="tel" pattern="\(\d{3}\)+\d{3}-\d{4}" name="PhoneNumber" size"20" maxlength="10"></p>
+			    <p><label>Message: </label><textarea cols="50" rows="10"></textarea></p>
+			    <input type="submit" name="submitbutton" value="Send">
 		  </form>
-		-->
-	    
+</div>
+
+
     <div class="careers">
       <br>
 	  <h1 style="color:#C0C0C0;font-family:verdana;">CAREERS</h1>
@@ -297,8 +305,8 @@
 	  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family, and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
 	</div>
   </div>
-	
-	
+
+
   <footer>
     <hr>
 	<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
