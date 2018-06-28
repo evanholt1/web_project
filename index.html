@@ -5,77 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SILVERLINE GYM&trade; Jo</title>
   <style>
-    /* setting for the whole page : */
+  /* options for the whole page : */
 	body {
 	background-color:#202020;
-	margin: 0px 15%;
+	margin: 0px 15%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
 	}
 
-	/* to fix issue with sticky overlapping when scrolling to a section above : */
+/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
+  used to fix issue with sticky (position type) overlapping (being over another element)  when scrolling to a section above : */
 	:target:before {
 	  content:"";
       display:block;
-      height:175px; /* fixed header height*/
-      margin:-175px 0 0; /* negative fixed header height */
+      height:175px; /* fixed header's(sticky) height, so it would go to the correct position */
+      margin:-175px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
     }
 
-    /* all .sticky are for the 'sticky' vanigation bar and logo */
+/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
 	.sticky {
-      position: sticky;
-      top: 0;
-      background-color:black;
-	  z-index:9999;
-	  margin:0px -21.2%;
+    position: sticky; /* the type of the position */
+    top: 0; /* needed to make sticky work */
+    background-color:black;
+	  z-index:9999; /* so it would appear above anything on the page when scrolling down*/
+	  margin:0px -21.2%; /* to make it fit the width of the page right */
     }
 
+/* style of the menus in the fixed header (horizontal,in center,black background)*/
     .sticky ul {
       list-style-type: none;
       margin: 0 auto;
       padding: 0;
-	  overflow: hidden;
+	    overflow: hidden;
       background-color: black;
-	  text-align:center;
+	    text-align:center;
 	}
 
+/* needed to make menus appear horizontally*/
 	.sticky li {
       display:inline;
     }
 
+/* style of the actual text(hyperlinks) of the menus of the navigation bar */
 	.sticky li a {
       display: inline-block;
       color: white;
       text-align: center;
       padding: 14px 16px;
-      text-decoration: none;
+      text-decoration: none; /* to remove the underline of the links */
     }
 
-    /* Change the link color of a navigation bar in sticky to #111 (black) on hover */
+/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
     .sticky li a:hover {
-      background-color: #111;
+      background-color: black;
     }
 
-	/* for titles of sections: */
+/* for titles of sections: */
 	.headers {
 	color:#C0C0C0;
 	font-family:verdana;
 	background-color:black;
 	}
 
-	/* generally,for all body text : */
+/* for almost all the body's text : */
 	p ,th , .careers, .memberships{
 	color:white;
 	}
 
-    /* to position images left or right of text: */
+/* to position images left or right of text:(in about us) */
 	.clearfix::after {
       content: "";
       clear: both;
       display: table;
     }
 
-	/* so facilities animation works */
-	.fling-minislide {width:350px; height:300px; overflow:hidden;  }
-	.fling-minislide img{ position:absolute; animation:fling-minislide 40s infinite; opacity:0;  width:997px; height: 450px;}
+/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
+	 it's used so facilities' animation works */
+
+/*for the actual container of the images:*/
+  .fling-minislide
+  {width:100%; height:500px; overflow:hidden;position:relative;}
+
+/*for the images themselves*/
+	.fling-minislide img
+  {
+    position:absolute;
+    animation:fling-minislide 40s infinite;
+    opacity:0;
+    width: 100%;
+    height: 500px;
+  }
+
+/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
+    the images are placed in reverse order */
 	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
 	.fling-minislide img:nth-child(8){animation-delay:0s;}
 	.fling-minislide img:nth-child(7){animation-delay:5s;}
@@ -86,60 +106,56 @@
 	.fling-minislide img:nth-child(2){animation-delay:30s;}
 	.fling-minislide img:nth-child(1){animation-delay:35s;}
 
-	/* for forms (after removing tables) */
-	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text*/
+
+/* for the page's forms */
+	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text of input*/
 	margin: 8px 0; /* empty space around input*/
 	padding : 6px 6px; /* interior size of input*/
 	box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
-	background-color: #C0C0C0;
-  color: black;/* text color */
+	background-color: #C0C0C0; /* box color */
+  color: black; /* text color */
 	}
 
-	/* footer styling*/
+/* footer(logo/name + social media links) style*/
 		footer {
 	background-color:black;
-	text-align:center; /* for images in center*/
+	text-align:center; /* for images to go to center */
 	}
 
-	.membershipform {
-	margin: 0px 35%;
+/* style for the forms */
+	.membershipform, .contactform {
+	margin: 0px 30%;
 	text-align:center;
 	}
 
-	/*.specialsub {
-	position:relative;
-	left:400px;
-	top:-282px;
-	}*/
-
+/* for the text above the memberShipForm */
 	.memberships h2, .memberships h3 {
 	text-align:center;
 	}
 
-	.alignmember {
+/* for the memberShipForm's radio & checkbox input types alignment */
+	.InputNeedingAlign {
 	position:relative;
 	left:40px;
 	text-align:left;
 	}
 
+/* this is used to make the text appear inside the image on the home section*/
   .centered {
   color:#C0C0C0;
   font-family:impact;
-  position:absolute;/*these 3 lines are for correct positioning inside the image*/
-  top: 45%;left: 50%;
-  transform: translate(-50%, -50%);
+  position:absolute; /* needed for correct positioning inside the image */
+  top: 42%;left: 50%; /* needed for correct positioning inside the image */
+  transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
   font-size:35px;
   opacity:0.9;
   }
-
-
-
 
   </style>
 </head>
 <body>
 
-  <div class ="sticky" style="height:150;">
+  <div class ="sticky">
     <img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110"/>
 	<img src="images/name1.png" alt="Silverline Gym Name" width="110" height="110"/>
      <div class="stickynav">
@@ -151,6 +167,7 @@
 	    <li><a href="#memberships">MEMBERSHIPS</a></li>
 	    <li><a href="#time">TIME TABLE</a></li>
 	    <li><a href="#contact">CONTACT US</a></li>
+      <li><a href="#careers">CAREERS</a></li>
 	  </ul>
 	  <hr style="height: 5px;background-color:white;color:white;">
     </div>
@@ -169,7 +186,7 @@
 		 Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
 		 When Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong>, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
 		 Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
-	  <h2><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
+	  <h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
 	</div>
   </div>
 
@@ -218,7 +235,7 @@
     </div>
   </div>
 
-  <br><br><br><br><br><br><br><br>
+
   <div class="trainers section" id="trainers">
 	<div class="headers">
 	  <h1>TRAINERS</h1>
@@ -232,13 +249,13 @@
 	<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
 	entirely online!</h2>
 	<h3>Just enter the required info below to register:<br></h3>
-	<form method="post" action="#" class='membershipform' > <!-- # in action only put for validator -->
+	<form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
       <fieldset>
 	    <legend><h2>MEMBER INFORMATION:</h2></legend>
 		<label>NAME</label><br><input type="text" name="inputname" maxlength="30" size="20"><br>
 		<label>4-DIGIT PASSWORD*</label><br><input type="password" name="inputpassword" size="1" maxlength='4'><br><br><!--size is less than max length because padding makes the interior size bigger-->
         <h3>Subscription Period:</h3>
-		<div class='alignmember'>
+		<div class='InputNeedingAlign'>
 		  <input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs "><label>One Month - 50JDs</label>
 		  <br>
 		  <input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs "><label>Three Months - 90JDs</label>
@@ -248,21 +265,21 @@
 		  <input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs"><label>One Year - 300JDs</label>
 		</div>
 		<h3>Special Subscriptions*:</h3>
-	    <div class='alignmember'>
+	    <div class='InputNeedingAlign'>
     	  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>None</label><br>
 		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Gym</label><br>
 		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Osama Gym</label><br>
 		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Mega Osama Gym</label><br>
 		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Mega Osama Gym</label><br>
 		</div>
-		<br>
-		<label>Payment Method </label>
-		<select>
+
+		<p><label>Payment Method </label><p>
+		</p><select>
 		  <option>Visa</option><option>PayPal</option><option>Mastercard</option>
-		</select>
-		<br>
-		<label>Card Number </label><input type="text" name="cardnumbertext" size="16" maxlength="16">
-        <input type="submit" name="submit button" value="Join">
+		</select></p>
+
+		<p><label>Card Number<br> </label><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
+        <p><input type="submit" name="submit button" value="Join"></p>
 	  </fieldset>
     </form>
     <h5>* : info needed for private class room entry.</h5>
@@ -282,18 +299,19 @@
 
 	  <div class="contactform">
           <form method="post" action="#">
-		      <p><label>Name </label><input type="text" name="Name" size="30"></p>
-		      <p><label>E-Mail </label><input type="email" name="E-Mail" size"20"></p>
-			    <p><label>Phone Number </label><input type="tel" pattern="\(\d{3}\)+\d{3}-\d{4}" name="PhoneNumber" size"20" maxlength="10"></p>
-			    <p><label>Message: </label><textarea cols="50" rows="10"></textarea></p>
-			    <input type="submit" name="submitbutton" value="Send">
+		      <p><label>NAME<br> </label><input type="text" name="Name" size="30" style="width:50%;" ></p>
+		      <p><label>E-MAIL<br> </label><input type="email" name="E-Mail" size"20" style="width:50%;"></p>
+			    <p><label>PHONE NUMBER<br> </label><input type="tel" pattern="\(\d{3}\)+\d{3}-\d{4}" name="PhoneNumber" size"20" maxlength="10" style="width:50%;"></p>
+			    <p><label>MESSAGE<br> </label><textarea cols="50" rows="10"></textarea></p>
+			    <input style="background-color:#C0C0C0;"type="submit" name="submitbutton" value="Send">
 		  </form>
-</div>
+  </div>
 
 
-    <div class="careers">
-      <br>
-	  <h1 style="color:#C0C0C0;font-family:verdana;">CAREERS</h1>
+  <div class="careers section" id="careers">
+  <div class="headers">
+    <h1>CAREERS</h1>
+  </div>
 	  <h4>Silver Line Gym is looking for professionals in the following fields:</h4>
 	  <ul>
 		<li>Personal Trainers </li>
@@ -304,7 +322,7 @@
 	  </ul>
 	  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family, and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
 	</div>
-  </div>
+
 
 
   <footer>
