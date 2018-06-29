@@ -151,15 +151,33 @@
   opacity:0.9;
   }
 
+    table {
+      border-collapse: collapse; /* to remove double borders */
+      }
+
+      table, th, td {
+          border: 2px solid #C0C0C0;
+          background-color:black;
+      }
+
+      th {
+        color:white;
+      }
+      td img {
+        width:151px;
+      }
+
   </style>
 </head>
 <body>
-
+<!-- ************************* NAVIGATION BAR ************************* -->
+  <!-- navigation logo/name -->
   <div class ="sticky">
     <img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110"/>
 	<img src="images/name1.png" alt="Silverline Gym Name" width="110" height="110"/>
      <div class="stickynav">
-	  <ul>
+    <!-- navigation buttons -->
+    <ul>
 	    <li><a href="#top">HOME</a></li>
 	    <li><a href="#about">ABOUT US</a></li>
 	    <li><a href="#facilities">FACILITIES</a></li>
@@ -173,12 +191,16 @@
     </div>
   </div>
 
+
+<!-- ************************* MAIN ************************* -->
+  <!-- image + text inside it -->
   <div class="main-section">
 	<div class="main-image">
 	  <img src="images/weightlifting-main.png" alt="main" style="opacity:0.9;display: block;margin-left: auto;margin-right: auto;width: 50%;"/>
 	  <div class="centered"><h1  >&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
 	</div>
-	<div id="Main">
+  <!-- the paragraph in main -->
+  <div id="Main">
 	  <h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
 	  <p>We are the original, the place where it all began.<br><br>
 		 More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
@@ -191,6 +213,7 @@
   </div>
 
 
+<!-- ************************* ABOUT US ************************* -->
   <div class="about us section" id="about">
 	<div class="headers">
 	  <h1 >ABOUT US</h1>
@@ -219,6 +242,8 @@
 	</div>
   </div>
 
+
+<!-- *************************  FACILITIES ************************* -->
   <div class="facilities section" id="facilities">
 	<div class="headers">
 	  <h1 >FACILITIES</h1>
@@ -236,12 +261,15 @@
   </div>
 
 
+<!-- ************************* TRAINERS ************************* -->
   <div class="trainers section" id="trainers">
 	<div class="headers">
 	  <h1>TRAINERS</h1>
 	</div>
   </div>
 
+
+<!-- ************************* MEMBERSHIPS ************************* -->
   <div class="memberships section" id="memberships">
 	<div class="headers">
 	  <h1>MEMBERSHIPS</h1>
@@ -249,7 +277,8 @@
 	<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
 	entirely online!</h2>
 	<h3>Just enter the required info below to register:<br></h3>
-	<form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
+  <!-- MEMBERSHIP FORM : -->
+  <form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
       <fieldset>
 	    <legend><h2>MEMBER INFORMATION:</h2></legend>
 		<label>NAME</label><br><input type="text" name="inputname" maxlength="30" size="20"><br>
@@ -267,10 +296,10 @@
 		<h3>Special Subscriptions*:</h3>
 	    <div class='InputNeedingAlign'>
     	  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>None</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Gym</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Osama Gym</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Mega Osama Gym</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Super Mega Osama Gym</label><br>
+		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>LesMills BODYPUMP</label><br>
+		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Zumba Fitness</label><br>
+		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Core</label><br>
+		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Grit-Combat</label><br>
 		</div>
 
 		<p><label>Payment Method </label><p>
@@ -286,17 +315,51 @@
   </div>
 
 
+<!-- ************************* TIME TABLE ************************* -->
   <div class="time table section" id="time">
 	<div class="headers">
 	  <h1>TIME TABLE</h1>
 	</div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th></th><th>SATURDAY</th><th>SUNDAY</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>9:00am</th><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"/></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"/></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"/></td>
+        </tr>
+        <tr>
+          <th>10:00am</th><td></td><td><img src="images/membership3.png" alt="Core(Katia)"/></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"/></td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td>
+        </tr>
+        <tr>
+          <th>11:00am</th><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td><img src="images/membership2.png"  alt="Zumba Fitness(Teya)"/></td><td></td><td><img src=""  alt=""/></td><td><img src="images/membership3.png" alt="Core(Katia)" /></td>
+        </tr>
+        <tr>
+          <th>12:00pm</th><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"/></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
+        </tr>
+        <tr>
+          <th>4:00pm</th><td> <img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/> </td><td></td><td></td><td></td><td><img src="images/membership2.png"  alt="Zumba Fitness(Teya)"/></td><td></td>
+        </tr>
+        <tr>
+          <th>5:00pm</th><td> <img src="images/membership3.png"  alt="Core(Katia)"/> </td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td><img src="images/membership3.png"  alt="Core(Katia)"/></td><td></td><td></td>
+        </tr>
+        <tr>
+          <th>6:00pm</th><td>  </td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note : Friday is a vacation day for <strong><em>Silverline Gym&trade;</em></strong>.</p>
   </div>
 
+
+<!-- *************************CONTACT US ************************* -->
   <div class="contact us section" id="contact">
 	<div class="headers">
 	  <h1>CONTACT US</h1>
 	</div>
-
+  <!-- CONTACT FORM -->
 	  <div class="contactform">
           <form method="post" action="#">
 		      <p><label>NAME<br> </label><input type="text" name="Name" size="30" style="width:50%;" ></p>
@@ -308,6 +371,7 @@
   </div>
 
 
+<!-- ************************* CAREERS ************************* -->
   <div class="careers section" id="careers">
   <div class="headers">
     <h1>CAREERS</h1>
@@ -324,7 +388,7 @@
 	</div>
 
 
-
+<!-- ************************* FOOTER ************************* -->
   <footer>
     <hr>
 	<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130"/>
