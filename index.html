@@ -6,7 +6,7 @@
 	<meta name="description" content="The offical website for Silverline Gym Jo">
 	<title>SILVERLINE GYM&trade; Jo</title>
 	<style>
-  
+
 	/* options for the whole page : */
 	body {
 		background-color:#202020;
@@ -84,8 +84,8 @@
 
 	/*for the actual container of the images:*/
   .fling-minislide {
-		width:100%; 
-		height:500px; 
+		width:100%;
+		height:500px;
 		overflow:hidden;
 		position:relative;
 	}
@@ -172,6 +172,35 @@
 		width:151px;
 	}
 
+  .trainerbgi {
+		background-image:url("images/bgi1.png");
+		background-size: cover;
+	}
+
+	.trainerbgi p  , .careerbgi p{
+		color:white;
+		font-size:17px;
+	}
+
+	.trainerbgi h2  {
+		color:#C0C0C0;
+	}
+
+	.membershipbgi {
+		background-image:url("images/bgi2.png");
+		background-size: cover;
+	}
+
+	.contactbgi {
+		background-image:url("images/bgi3.png");
+		background-size: cover;
+	}
+
+	.careerbgi {
+		background-image:url("images/bgi4.png");
+		background-size: cover;
+	}
+
   </style>
 </head>
 <body>
@@ -186,7 +215,7 @@
 				<li><a href="#top">HOME</a></li>
 				<li><a href="#about">ABOUT US</a></li>
 				<li><a href="#facilities">FACILITIES</a></li>
-				<li><a href="#trainers">TRAINERS</a></li>
+				<li><a href="#trainers">PERSONAL TRAINERS</a></li>
 				<li><a href="#memberships">MEMBERSHIPS</a></li>
 				<li><a href="#time">TIME TABLE</a></li>
 				<li><a href="#contact">CONTACT US</a></li>
@@ -203,8 +232,8 @@
 		<div class="main-image">
 			<img src="images/weightlifting-main.png" alt="main" style="1;display: block;margin-left: auto;margin-right: auto;width: 50%;">
 			<div class="centered">
-				<h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1>
-			</div>
+			 <h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1>
+		 </div>
 		</div>
 		<!-- the paragraph in main -->
 		<div id="Main">
@@ -269,9 +298,42 @@
 
 
 <!-- ************************* TRAINERS ************************* -->
-  <div class="trainers section" id="trainers">
+  <div class="personal trainers section" id="trainers">
 		<div class="headers">
 			<h1>TRAINERS</h1>
+		</div>
+		<div class="trainerbgi">
+			<h2>Why Take Personal Training?</h2>
+			<p>People take Personal Training for many different reasons but generally they have a goal<br>
+			   or a result they want to achieve. Sometimes it is appearance, health or even performance.<br>
+				 It could be weight loss, toning, strengthening, body building or simply dropping a dress<br>
+				 size for that special event.<br>
+				 If you have a goal and are either struggling to achieve this yourself or want to achieve this<br>
+				 in a timescale that is as fast as possible then Personal Training is for you!</p>
+			<h2>Motivation!</h2>
+		  <p>We believe that as a company we offer the best value Personal Training there is!<br>
+				 Our trainers are experts at helping you get the most out of every workout<br>
+				 – no cutting corners,just full balanced effort.<br>
+				  They are trained to deal with all sorts of injuries<br>
+				 and will give you their devoted attention day-in and day-out.<br>
+				 Frankly speaking, if you take personal training,<br>
+				 there is no way out before we get you to your goal! Be careful ;)</p>
+			<h2>Safety</h2>
+			<p>We are not always aware of how we do something or the effect<br>
+				 an exercise or a particular technique may have on our bodies.<br>
+				 While maximizing your benefit through hard work,<br>
+				 the trainer ensures you perform exercises<br>
+				 that are appropriate for your ability and current fitness level,<br>
+				 this reduces the likelihood of injury keeping<br>
+				 your training at the gym and not spending time on therapy.</p>
+			<h2>Variety</h2>
+	 		<p>We all get bored doing the same thing.<br>
+				 Trainers have an entire database of training methods<br>
+				 and specific exercises they can call on<br>
+				 to keep each and every session fresh and varied.<br>
+				 Many of these exercises you probably can’t do safely<br>
+				 or as effectively if you were to do them alone.<br>
+				 This in turn keeps you working in manner to maximize your results..</p>
 		</div>
   </div>
 
@@ -281,40 +343,42 @@
 		<div class="headers">
 			<h1>MEMBERSHIPS</h1>
 		</div>
-		<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
-		entirely online!</h2>
-		<h3>Just enter the required info below to register:<br></h3>
-		<!-- MEMBERSHIP FORM : -->
-		<form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
-			<fieldset> <!-- draws the box around the form -->
-				<legend><h2>MEMBER INFORMATION:</h2></legend> <!-- the caption for the fieldset -->
-				<p>NAME<br><input type="text" name="inputname" maxlength="30" size="20"></p>
-				<p>4-DIGIT PASSWORD*<br><input type="password" name="inputpassword" size="1" maxlength='4'></p><!--size is less than max length because padding makes the interior size bigger-->
-				<h3>Subscription Period:</h3>
-				<div class='InputNeedingAlign'>
-					<p><input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs ">One Month - 50JDs</p>
-					<p><input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs ">Three Months - 90JDs</p>
-					<p><input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs">Six Months - 160JDs</p>
-					<p><input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs">One Year - 300JDs</p>
-				</div>
-				<h3>Special Subscriptions*:</h3>
-				<div class='InputNeedingAlign'>
-					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">None</p>
-					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">LesMills BODYPUMP</p>
-					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Zumba Fitness</p>
-					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Core</p>
-					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Grit-Combat</p>
-				</div>
-				<p>Payment Method </p>
-				<select>
-					<option>Visa</option>
-					<option>PayPal</option>
-					<option>Mastercard</option>
-				</select>
-				<p>Card Number<br><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
-				<p><input type="submit" name="submit button" value="Join"></p>
-			</fieldset>
-		</form>
+		<div class="membershipbgi">
+			<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
+			entirely online!</h2>
+			<h3>Just enter the required info below to register:<br></h3>
+			<!-- MEMBERSHIP FORM : -->
+			<form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
+				<fieldset> <!-- draws the box around the form -->
+					<legend><h2>MEMBER INFORMATION:</h2></legend> <!-- the caption for the fieldset -->
+					<p>NAME<br><input type="text" name="inputname" maxlength="30" size="20"></p>
+					<p>4-DIGIT PASSWORD*<br><input type="password" name="inputpassword" size="1" maxlength='4'></p><!--size is less than max length because padding makes the interior size bigger-->
+					<h3>Subscription Period:</h3>
+					<div class='InputNeedingAlign'>
+						<p><input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs ">One Month - 50JDs</p>
+						<p><input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs ">Three Months - 90JDs</p>
+						<p><input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs">Six Months - 160JDs</p>
+						<p><input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs">One Year - 300JDs</p>
+					</div>
+					<h3>Special Subscriptions*:</h3>
+					<div class='InputNeedingAlign'>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">None</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">LesMills BODYPUMP</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Zumba Fitness</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Core</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Grit-Combat</p>
+					</div>
+					<p>Payment Method </p>
+					<select>
+						<option>Visa</option>
+						<option>PayPal</option>
+						<option>Mastercard</option>
+					</select>
+					<p>Card Number<br><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
+					<p><input type="submit" name="submit button" value="Join"></p>
+				</fieldset>
+			</form>
+		</div>
 		<h5>* : info needed for for special subscription gym room entry.</h5>
   </div>
 
@@ -347,15 +411,15 @@
 					<th>4:00pm</th><td> <img src="images/membership4.png" alt="Grit-Combat(Ruby)"> </td><td></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td>
 				</tr>
 				<tr>
-					<th>5:00pm</th><td> <img src="images/membership3.png" alt="Core(Katia)"> </td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td>
+					<th>5:00pm</th><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td>
 				</tr>
 				<tr>
 					<th>6:00pm</th><td>  </td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
 				</tr>
 			</tbody>
 		</table>
-    <p>Note : Friday is a vacation day for <strong><em>Silverline Gym&trade;</em></strong>.</p>
-		<p>Note : Special Subscription courses' rooms are in the top floor. </p>
+    <p>Notes : - Friday is a vacation day for <strong><em>Silverline Gym&trade;</em></strong>.<br>&emsp;&emsp;&emsp;
+			         - Special Subscription courses' rooms are in the top floor.</p>
   </div>
 
 
@@ -365,14 +429,16 @@
 			<h1>CONTACT US</h1>
 		</div>
 		<!-- CONTACT FORM -->
-		<div class="contactform">
-				<form method="post" action="#">
-					<p>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;" ></p>
-					<p>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;" ></p>
-					<p>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
-					<p>MESSAGE:<textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></p>
-					<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
-				</form>
+		<div class="contactbgi">
+			<div class="contactform">
+					<form method="post" action="#">
+						<p>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;" ></p>
+						<p>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;" ></p>
+						<p>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
+						<p>MESSAGE:<textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></p>
+						<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
+					</form>
+			</div>
 		</div>
 	</div>
 
@@ -381,16 +447,20 @@
 		<div class="headers">
 			<h1>CAREERS</h1>
 		</div>
-	  <h4>Silver Line Gym is looking for professionals in the following fields:</h4>
-	  <ul>
-			<li>Personal Trainers </li>
-			<li>group Exercise Instructors</li>
-			<li>Lifeguards</li>
-			<li>Security Attendants</li>
-			<li>Maintenance Technician</li>
-	  </ul>
-	  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family,
-			  and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
+		<div class="careerbgi">
+		  <h4>Silver Line Gym is looking for professionals in the following fields:</h4>
+		  <ul>
+				<li>Personal Trainers </li>
+				<li>group Exercise Instructors</li>
+				<li>Lifeguards</li>
+				<li>Security Attendants</li>
+				<li>Maintenance Technician</li>
+		  </ul>
+		  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family,<br>
+				  and you can work full-time,<br>
+					you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com" style="color:white;">SilverLineGym@Gmail.com</a></h4>
+					<br><br>
+		</div>
 	</div>
 
 
