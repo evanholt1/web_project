@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"> <!-- encoding-->
-  <meta name="keywords" content="Silverline,Gym,Jo">
-  <meta name="description" content="The offical website for Silverline Gym Jo">
-  <title>SILVERLINE GYM&trade; Jo</title>
-  <style>
-  /* options for the whole page : */
+	<meta charset="UTF-8"> <!-- encoding-->
+	<meta name="keywords" content="Silverline,Gym,Jo">
+	<meta name="description" content="The offical website for Silverline Gym Jo">
+	<title>SILVERLINE GYM&trade; Jo</title>
+	<style>
+  
+	/* options for the whole page : */
 	body {
-	background-color:#202020;
-	margin: 0px 15%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
+		background-color:#202020;
+		margin: 0px 15%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
 	}
 
-/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
+	/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
   used to fix issue with sticky (position type) overlapping (being over another element)  when scrolling to a section above : */
 	:target:before {
 	  content:"";
-      display:block;
-      height:175px; /* fixed header's(sticky) height, so it would go to the correct position */
-      margin:-175px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
-    }
+		display:block;
+		height:175px; /* fixed header's(sticky) height, so it would go to the correct position */
+		margin:-175px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
+	}
 
-/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
+	/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
 	.sticky {
     position: sticky; /* the type of the position */
     top: 0; /* needed to make sticky work */
     background-color:black;
 	  z-index:9999; /* so it would appear above anything on the page when scrolling down*/
 	  margin:0px -21.2%; /* to make it fit the width of the page right */
-    }
-
-/* style of the menus in the fixed header (horizontal,in center,black background)*/
-    .sticky ul {
-      list-style-type: none;
-      margin: 0 auto;
-      padding: 0;
-	    overflow: hidden;
-      background-color: black;
-	    text-align:center;
 	}
 
-/* needed to make menus appear horizontally*/
+	/* style of the menus in the fixed header (horizontal,in center,black background)*/
+	.sticky ul {
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+		background-color: black;
+		text-align:center;
+	}
+
+	/* needed to make menus appear horizontally*/
 	.sticky li {
       display:inline;
-    }
+	}
 
-/* style of the actual text(hyperlinks) of the menus of the navigation bar */
+	/* style of the actual text(hyperlinks) of the menus of the navigation bar */
 	.sticky li a {
-      display: inline-block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none; /* to remove the underline of the links */
-    }
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none; /* to remove the underline of the links */
+	}
 
-/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
-    .sticky li a:hover {
-      background-color: black;
-    }
+	/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
+	.sticky li a:hover {
+		background-color: black;
+	}
 
-/* for titles of sections: */
+	/* for titles of sections: */
 	.headers {
-	color:#C0C0C0;
-	font-family:verdana;
-	background-color:black;
+		color:#C0C0C0;
+		font-family:verdana;
+		background-color:black;
 	}
 
-/* for almost all the body's text : */
-	p ,th , .careers, .memberships{
-	color:white;
+	/* for almost all the body's text : */
+	p ,th , .careers, .memberships {
+		color:white;
 	}
 
-/* to position images left or right of text:(in about us) */
+	/* to position images left or right of text:(in about us) */
 	.clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
+		content: "";
+		clear: both;
+		display: table;
+	}
 
-/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
+	/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
 	 it's used so facilities' animation works */
 
-/*for the actual container of the images:*/
-  .fling-minislide
-  {width:100%; height:500px; overflow:hidden;position:relative;}
+	/*for the actual container of the images:*/
+  .fling-minislide {
+		width:100%; 
+		height:500px; 
+		overflow:hidden;
+		position:relative;
+	}
 
-/*for the images themselves*/
-	.fling-minislide img
-  {
+	/*for the images themselves*/
+	.fling-minislide img  {
     position:absolute;
     animation:fling-minislide 40s infinite;
     opacity:0;
@@ -95,7 +99,7 @@
     height: 500px;
   }
 
-/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
+	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
     the images are placed in reverse order */
 	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
 	.fling-minislide img:nth-child(8){animation-delay:0s;}
@@ -108,65 +112,65 @@
 	.fling-minislide img:nth-child(1){animation-delay:35s;}
 
 
-/* for the page's forms */
+	/* for the page's forms */
 	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text of input*/
-	margin: 8px 0; /* empty space around input*/
-	padding : 6px 6px; /* interior size of input*/
-	box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
-	background-color: #C0C0C0; /* box color */
-  color: black; /* text color */
+		margin: 8px 0; /* empty space around input*/
+		padding : 6px 6px; /* interior size of input*/
+		box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
+		background-color: #C0C0C0; /* box color */
+		color: black; /* text color */
 	}
 
-/* footer(logo/name + social media links) style*/
-		footer {
-	background-color:black;
-	text-align:center; /* for images to go to center */
+	/* footer(logo/name + social media links) style*/
+	footer {
+		background-color:black;
+		text-align:center; /* for images to go to center */
 	}
 
-/* style for the forms */
+	/* style for the forms */
 	.membershipform, .contactform {
-	margin: 0px 30%;
-	text-align:center;
+		margin: 0px 30%;
+		text-align:center;
 	}
 
-/* for the text above the memberShipForm */
+	/* for the text above the memberShipForm */
 	.memberships h2, .memberships h3 {
-	text-align:center;
+		text-align:center;
 	}
 
 /* for the memberShipForm's radio & checkbox input types alignment */
 	.InputNeedingAlign {
-	position:relative;
-	left:40px;
-	text-align:left;
+		position:relative;
+		left:40px;
+		text-align:left;
 	}
 
-/* this is used to make the text appear inside the image on the home section*/
+	/* this is used to make the text appear inside the image on the home section*/
   .centered {
-  color:#C0C0C0;
-  font-family:impact;
-  position:absolute; /* needed for correct positioning inside the image */
-  top: 42%;left: 50%; /* needed for correct positioning inside the image */
-  transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
-  font-size:35px;
-  opacity:0.85;
+		color:#C0C0C0;
+		font-family:impact;
+		position:absolute; /* needed for correct positioning inside the image */
+		top: 42%;left: 50%; /* needed for correct positioning inside the image */
+		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
+		font-size:35px;
+		opacity:0.85;
   }
 
-    table {
-      border-collapse: collapse; /* to remove double borders */
-      }
+	table {
+		border-collapse: collapse; /* to remove double borders */
+	}
 
-      table, th, td {
-          border: 2px solid #C0C0C0;
-          background-color:black;
-      }
+	table, th, td {
+		border: 2px solid #C0C0C0;
+		background-color:black;
+	}
 
-      th {
-        color:white;
-      }
-      td img {
-        width:151px;
-      }
+	th {
+		color:white;
+	}
+	td img {
+		width:151px;
+	}
 
   </style>
 </head>
@@ -175,20 +179,20 @@
   <!-- navigation logo/name -->
   <div class ="sticky">
     <img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
-	<img src="images/name1.png" alt="Silverline Gym Name" width="110" height="110">
-     <div class="stickynav">
-    <!-- navigation buttons -->
-    <ul>
-	    <li><a href="#top">HOME</a></li>
-	    <li><a href="#about">ABOUT US</a></li>
-	    <li><a href="#facilities">FACILITIES</a></li>
-	    <li><a href="#trainers">TRAINERS</a></li>
-	    <li><a href="#memberships">MEMBERSHIPS</a></li>
-	    <li><a href="#time">TIME TABLE</a></li>
-	    <li><a href="#contact">CONTACT US</a></li>
-      <li><a href="#careers">CAREERS</a></li>
-	  </ul>
-	  <hr style="height: 5px;background-color:white;color:white;">
+		<img src="images/name1.png" alt="Silverline Gym Name" width="110" height="110">
+    <div class="stickynav">
+			<!-- navigation buttons -->
+			<ul>
+				<li><a href="#top">HOME</a></li>
+				<li><a href="#about">ABOUT US</a></li>
+				<li><a href="#facilities">FACILITIES</a></li>
+				<li><a href="#trainers">TRAINERS</a></li>
+				<li><a href="#memberships">MEMBERSHIPS</a></li>
+				<li><a href="#time">TIME TABLE</a></li>
+				<li><a href="#contact">CONTACT US</a></li>
+				<li><a href="#careers">CAREERS</a></li>
+			</ul>
+			<hr style="height: 5px;background-color:white;color:white;">
     </div>
   </div>
 
@@ -196,210 +200,211 @@
 <!-- ************************* MAIN ************************* -->
   <!-- image + text inside it -->
   <div class="main-section">
-	<div class="main-image">
-	  <img src="images/weightlifting-main.png" alt="main" style="1;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-	  <div class="centered"><h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1></div>
-	</div>
-  <!-- the paragraph in main -->
-  <div id="Main">
-	  <h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
-	  <p>We are the original, the place where it all began.<br><br>
-		 More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
-		 Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
-		 Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
-		 When Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong>, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
-		 Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
-	  <h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
-	</div>
+		<div class="main-image">
+			<img src="images/weightlifting-main.png" alt="main" style="1;display: block;margin-left: auto;margin-right: auto;width: 50%;">
+			<div class="centered">
+				<h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1>
+			</div>
+		</div>
+		<!-- the paragraph in main -->
+		<div id="Main">
+			<h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
+			<p>We are the original, the place where it all began.<br><br>
+			   More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
+			   Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
+			   Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
+			   When Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong>, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
+			   Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
+			<h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
+		</div>
   </div>
 
 
 <!-- ************************* ABOUT US ************************* -->
   <div class="about us section" id="about">
-	<div class="headers">
-	  <h1 >ABOUT US</h1>
-	</div>
-	 <div>
-	  <div>
-	    <img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
-		<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
-		It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
-	  </div>
-	  <div>
-	    <img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
-	    <p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
-	  </div>
-	  <div class="clearfix">
-	    <img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-	    <p><br>The grand opening of the 13th <strong><em>Silverline Gym&trade;</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
-	    The Dubai branch was also the first <strong><em>Silverline Gym&trade;</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
-	  </div>
-	  <div class="clearfix">
-	    <img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-	    <br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
-	    The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
-	    Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
-	  </div>
-	</div>
+		<div class="headers">
+			<h1 >ABOUT US</h1>
+		</div>
+		 <div>
+			<div>
+				<img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+				<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
+				   It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
+			</div>
+			<div>
+				<img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+				<p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
+			</div>
+			<div class="clearfix">
+				<img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;">
+				<p><br>The grand opening of the 13th <strong><em>Silverline Gym&trade;</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
+				   The Dubai branch was also the first <strong><em>Silverline Gym&trade;</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
+			</div>
+			<div class="clearfix">
+				<img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;">
+				<br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
+				The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
+				Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
+			</div>
+		</div>
   </div>
 
 
 <!-- *************************  FACILITIES ************************* -->
   <div class="facilities section" id="facilities">
-	<div class="headers">
-	  <h1 >FACILITIES</h1>
-	</div>
-	<div class="fling-minislide">
-      <img src="images/facilities7.png" alt="Slide 8" >
-      <img src="images/facilities6.png" alt="Slide 7" >
-      <img src="images/facilities5.png" alt="Slide 6" >
-      <img src="images/facilities4.png" alt="Slide 5" >
-      <img src="images/facilities3.png" alt="Slide 4" >
-      <img src="images/facilities2.png" alt="Slide 3" >
-      <img src="images/facilities1.png" alt="Slide 2" >
-      <img src="images/facilities0.png" alt="Slide 1" >
-    </div>
+		<div class="headers">
+			<h1 >FACILITIES</h1>
+		</div>
+		<div class="fling-minislide">
+			<img src="images/facilities7.png" alt="Slide 8">
+			<img src="images/facilities6.png" alt="Slide 7">
+			<img src="images/facilities5.png" alt="Slide 6">
+			<img src="images/facilities4.png" alt="Slide 5">
+			<img src="images/facilities3.png" alt="Slide 4">
+			<img src="images/facilities2.png" alt="Slide 3">
+			<img src="images/facilities1.png" alt="Slide 2">
+			<img src="images/facilities0.png" alt="Slide 1">
+		</div>
   </div>
 
 
 <!-- ************************* TRAINERS ************************* -->
   <div class="trainers section" id="trainers">
-	<div class="headers">
-	  <h1>TRAINERS</h1>
-	</div>
+		<div class="headers">
+			<h1>TRAINERS</h1>
+		</div>
   </div>
 
 
 <!-- ************************* MEMBERSHIPS ************************* -->
   <div class="memberships section" id="memberships">
-	<div class="headers">
-	  <h1>MEMBERSHIPS</h1>
-	</div>
-	<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
-	entirely online!</h2>
-	<h3>Just enter the required info below to register:<br></h3>
-  <!-- MEMBERSHIP FORM : -->
-  <form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
-      <fieldset>
-	    <legend><h2>MEMBER INFORMATION:</h2></legend>
-		<label>NAME</label><br><input type="text" name="inputname" maxlength="30" size="20"><br>
-		<label>4-DIGIT PASSWORD*</label><br><input type="password" name="inputpassword" size="1" maxlength='4'><br><br><!--size is less than max length because padding makes the interior size bigger-->
-        <h3>Subscription Period:</h3>
-		<div class='InputNeedingAlign'>
-		  <input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs "><label>One Month - 50JDs</label>
-		  <br>
-		  <input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs "><label>Three Months - 90JDs</label>
-		  <br>
-		  <input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs"><label>Six Months - 160JDs</label>
-		  <br>
-		  <input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs"><label>One Year - 300JDs</label>
+		<div class="headers">
+			<h1>MEMBERSHIPS</h1>
 		</div>
-		<h3>Special Subscriptions*:</h3>
-	    <div class='InputNeedingAlign'>
-    	  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>None</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>LesMills BODYPUMP</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Zumba Fitness</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Core</label><br>
-		  <input type="checkbox" name="SpecialSubscriptionscheckbox"><label>Grit-Combat</label><br>
-		</div>
-
-		<p>Payment Method </p>
-		<select>
-		  <option>Visa</option><option>PayPal</option><option>Mastercard</option>
-		</select>
-
-		<p><label>Card Number<br> </label><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
-        <p><input type="submit" name="submit button" value="Join"></p>
-	  </fieldset>
-    </form>
-    <h5>* : info needed for private class room entry.</h5>
+		<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
+		entirely online!</h2>
+		<h3>Just enter the required info below to register:<br></h3>
+		<!-- MEMBERSHIP FORM : -->
+		<form method="post" action="#" class='membershipform' > <!-- # in action only put because of the validator -->
+			<fieldset> <!-- draws the box around the form -->
+				<legend><h2>MEMBER INFORMATION:</h2></legend> <!-- the caption for the fieldset -->
+				<p>NAME<br><input type="text" name="inputname" maxlength="30" size="20"></p>
+				<p>4-DIGIT PASSWORD*<br><input type="password" name="inputpassword" size="1" maxlength='4'></p><!--size is less than max length because padding makes the interior size bigger-->
+				<h3>Subscription Period:</h3>
+				<div class='InputNeedingAlign'>
+					<p><input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs ">One Month - 50JDs</p>
+					<p><input type="radio" name="DurationofSubscriptionradio" value="Three Months - 80JDs ">Three Months - 90JDs</p>
+					<p><input type="radio" name="DurationofSubscriptionradio" value="Six Months - 160JDs">Six Months - 160JDs</p>
+					<p><input type="radio" name="DurationofSubscriptionradio" value="One Year - 300JDs">One Year - 300JDs</p>
+				</div>
+				<h3>Special Subscriptions*:</h3>
+				<div class='InputNeedingAlign'>
+					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">None</p>
+					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">LesMills BODYPUMP</p>
+					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Zumba Fitness</p>
+					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Core</p>
+					<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Grit-Combat</p>
+				</div>
+				<p>Payment Method </p>
+				<select>
+					<option>Visa</option>
+					<option>PayPal</option>
+					<option>Mastercard</option>
+				</select>
+				<p>Card Number<br><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
+				<p><input type="submit" name="submit button" value="Join"></p>
+			</fieldset>
+		</form>
+		<h5>* : info needed for for special subscription gym room entry.</h5>
   </div>
 
 
 <!-- ************************* TIME TABLE ************************* -->
   <div class="time table section" id="time">
-	<div class="headers">
-	  <h1>TIME TABLE</h1>
-	</div>
-    <table>
-      <thead>
-        <tr>
-          <th></th><th>SATURDAY</th><th>SUNDAY</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>9:00am</th><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
-        </tr>
-        <tr>
-          <th>10:00am</th><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td>
-        </tr>
-        <tr>
-          <th>11:00am</th><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td>
-        </tr>
-        <tr>
-          <th>12:00pm</th><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td>
-        </tr>
-        <tr>
-          <th>4:00pm</th><td> <img src="images/membership4.png" alt="Grit-Combat(Ruby)"> </td><td></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td>
-        </tr>
-        <tr>
-          <th>5:00pm</th><td> <img src="images/membership3.png" alt="Core(Katia)"> </td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td>
-        </tr>
-        <tr>
-          <th>6:00pm</th><td>  </td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
-        </tr>
-      </tbody>
-    </table>
+		<div class="headers">
+			<h1>TIME TABLE</h1>
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th></th><th>SATURDAY</th><th>SUNDAY</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>9:00am</th><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
+				</tr>
+				<tr>
+					<th>10:00am</th><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td>
+				</tr>
+				<tr>
+					<th>11:00am</th><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td>
+				</tr>
+				<tr>
+					<th>12:00pm</th><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td>
+				</tr>
+				<tr>
+					<th>4:00pm</th><td> <img src="images/membership4.png" alt="Grit-Combat(Ruby)"> </td><td></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td>
+				</tr>
+				<tr>
+					<th>5:00pm</th><td> <img src="images/membership3.png" alt="Core(Katia)"> </td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td>
+				</tr>
+				<tr>
+					<th>6:00pm</th><td>  </td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
+				</tr>
+			</tbody>
+		</table>
     <p>Note : Friday is a vacation day for <strong><em>Silverline Gym&trade;</em></strong>.</p>
+		<p>Note : Special Subscription courses' rooms are in the top floor. </p>
   </div>
 
 
 <!-- *************************CONTACT US ************************* -->
   <div class="contact us section" id="contact">
-	<div class="headers">
-	  <h1>CONTACT US</h1>
+		<div class="headers">
+			<h1>CONTACT US</h1>
+		</div>
+		<!-- CONTACT FORM -->
+		<div class="contactform">
+				<form method="post" action="#">
+					<p>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;" ></p>
+					<p>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;" ></p>
+					<p>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
+					<p>MESSAGE:<textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></p>
+					<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
+				</form>
+		</div>
 	</div>
-  <!-- CONTACT FORM -->
-	  <div class="contactform">
-          <form method="post" action="#">
-		      <p><label>NAME<br> </label><input type="text" name="Name" size="30" style="width:50%;" ></p>
-		      <p><label>E-MAIL<br> </label><input type="email" name="E-Mail" size="20" style="width:50%;"></p>
-			    <p><label>PHONE NUMBER<br> </label><input type="tel" pattern="\(\d{3}\)+\d{3}-\d{4}" name="PhoneNumber" size="20" maxlength="10" style="width:50%;"></p>
-			    <p><label>MESSAGE<br> </label><textarea cols="50" rows="10"></textarea></p>
-			    <input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
-		  </form>
-  </div>
-</div>
 
 <!-- ************************* CAREERS ************************* -->
   <div class="careers section" id="careers">
-  <div class="headers">
-    <h1>CAREERS</h1>
-  </div>
+		<div class="headers">
+			<h1>CAREERS</h1>
+		</div>
 	  <h4>Silver Line Gym is looking for professionals in the following fields:</h4>
 	  <ul>
-		<li>Personal Trainers </li>
-		<li>group Exercise Instructors</li>
-		<li>Lifeguards</li>
-		<li>Security Attendants</li>
-		<li>Maintenance Technician</li>
+			<li>Personal Trainers </li>
+			<li>group Exercise Instructors</li>
+			<li>Lifeguards</li>
+			<li>Security Attendants</li>
+			<li>Maintenance Technician</li>
 	  </ul>
-	  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family, and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
+	  <h4>If you think you have what it takes to become part of the <strong><em>Silverline Gym&trade;</em></strong> family,
+			  and you can work full-time,<br> you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com">SilverLineGym@Gmail.com</a></h4>
 	</div>
 
 
 <!-- ************************* FOOTER ************************* -->
   <footer>
     <hr>
-	<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130">
-	<img src="images/name1.png" alt="Silverline Gym Name" width="130" height="130">
-	<br>
-	<p>Follow us on:<br><br>
-	   <a href='http://www.facebook.com'><img src="images/facebook.png" alt="Silverline Gym Name" width="50" height="50"></a>
-	   <a href='http://www.twitter.com'><img src="images/twitter.png" alt="Silverline Gym Name" width="50" height="50"></a>
-	   <a href='http://www.instagram.com'><img src="images/instagram.png" alt="Silverline Gym Name" width="50" height="50"></a>
-	</p>
+		<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130">
+		<img src="images/name1.png" alt="Silverline Gym Name" width="130" height="130">
+		<br>
+		<p>Follow us on:<br><br>
+			 <a href='http://www.facebook.com'><img src="images/facebook.png" alt="Silverline Gym Name" width="50" height="50"></a>
+			 <a href='http://www.twitter.com'><img src="images/twitter.png" alt="Silverline Gym Name" width="50" height="50"></a>
+			 <a href='http://www.instagram.com'><img src="images/instagram.png" alt="Silverline Gym Name" width="50" height="50"></a>
+		</p>
   </footer>
 </body>
 </html>
