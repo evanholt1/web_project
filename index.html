@@ -57,7 +57,7 @@
 
 	/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
 	.sticky li a:hover {
-		background-color: black;
+		background-color: #111;
 	}
 
 	/* for titles of sections: */
@@ -70,13 +70,6 @@
 	/* for almost all the body's text : */
 	p ,th , .careers, .memberships {
 		color:white;
-	}
-
-	/* to position images left or right of text:(in about us) */
-	.clearfix::after {
-		content: "";
-		clear: both;
-		display: table;
 	}
 
 	/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
@@ -172,7 +165,17 @@
 		width:151px;
 	}
 
-  .trainerbgi {
+  .aboutbgi {
+		background-image:url("images/bgi0.png");
+		background-size: cover;
+	}
+	
+	.aboutbgi p {
+		color:white;
+		font-weight:bold;
+	}
+	
+	.trainerbgi {
 		background-image:url("images/bgi1.png");
 		background-size: cover;
 	}
@@ -215,7 +218,7 @@
 				<li><a href="#top">HOME</a></li>
 				<li><a href="#about">ABOUT US</a></li>
 				<li><a href="#facilities">FACILITIES</a></li>
-				<li><a href="#trainers">PERSONAL TRAINERS</a></li>
+				<li><a href="#trainers">TRAINING</a></li>
 				<li><a href="#memberships">MEMBERSHIPS</a></li>
 				<li><a href="#time">TIME TABLE</a></li>
 				<li><a href="#contact">CONTACT US</a></li>
@@ -255,25 +258,29 @@
 			<h1 >ABOUT US</h1>
 		</div>
 		 <div>
-			<div>
-				<img src="images/about0.png" alt="first branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
+			<div class="aboutbgi">
 				<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
-				   It was located in Kansas,Texas. It offered basic fitness machines and training. But nevertheless, Armand's Gym offered the chance for fitness enthusiasts the family and enviroment they needed to grow and achieve.</p>
-			</div>
-			<div>
-				<img src="images/about1.png" alt="dubai branch" style="display: block;margin-left: auto;margin-right: auto;width: 50%;">
-				<p>The breakthrough came when the 4th branch was opened. It was larger than any branch before, and offered accomodations and facilities the likes the area had never seen. This was the beginning of Silveline Gym's success story.<br><br><br><br><br></p>
-			</div>
-			<div class="clearfix">
-				<img src="images/about2.png" alt="dubai branch" style="float:right;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-				<p><br>The grand opening of the 13th <strong><em>Silverline Gym&trade;</em></strong> branch in Dubai signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.It was in it's opening period one of the most popular gyms in the area, as it offered the best experience for a growth enviroment.<br><br>
-				   The Dubai branch was also the first <strong><em>Silverline Gym&trade;</em></strong> branch to actually hold bodybuilding competitions.<br><br></p><br><br>
-			</div>
-			<div class="clearfix">
-				<img src="images/about3.png" alt="dubai branch" style="float:left;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-				<br><br><br><br><br><p style="position:relative;left:20px;">The Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> is one of the Biggest in the Middle East, boasting a high count of high quality training machines of all kinds, to fit the fitness needs of everyone.<br><br>
-				The branch has also recieved the direct attention of Armand, and thus more resources have been spent on making the Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> an extremely advanced facility with high-quality grade training machines, to go along with the plethora of activities that can be done within the branch. <br><br>
-				Additionally, the branch has hired some of the most prominent & capable trainers in the country, and thus offering one of the best training experiences that can be had in the region.</p>
+				   It was located in Kansas,Texas. It offered basic fitness machines and training.<br>
+				   But nevertheless, Armand's Gym offered the chance for fitness enthusiasts<br>
+				   the family and enviroment they needed to grow and achieve.</p>		
+				<p>The breakthrough came when the 4th branch was opened.<br>
+				   It was larger than any branch before, and offered accomodations and facilities<br>
+				   the likes the area had never seen. This was the beginning of Silveline Gym's success story.</p>
+				<p>The grand opening of the 13th <strong><em>Silverline Gym&trade;</em></strong> branch in Dubai<br>
+				   signalled the opening of a new chapter in the story of <strong><em>Silverline Gym</em></strong>.<br>
+				   It was in it's opening period one of the most popular gyms in the area,<br>
+				   as it offered the best experience for a growth enviroment.<br>
+				   The Dubai branch was also the first <strong><em>Silverline Gym&trade;</em></strong> branch to actually<br>
+				   hold bodybuilding competitions.</p>
+				<p>The Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> is one of the Biggest in the Middle East,<br>
+				   boasting a high count of high quality training machines of all kinds,<br>
+				   to fit the fitness needs of everyone.<br>
+				   The branch has also recieved the direct attention of Armand, and thus more resources<br>
+				   have been spent on making the Jordan branch of <strong><em>Silverline Gym&trade;</em></strong> an extremely advanced<br>
+				   facility with high-quality grade training machines, to go along with the plethora<br>
+				   of activities that can be done within the branch.<br>
+				   Additionally, the branch has hired some of the most prominent & capable trainers<br>
+				   in the country, and thus offering one of the best training experiences that can be had in the region.</p><br>
 			</div>
 		</div>
   </div>
@@ -282,7 +289,7 @@
 <!-- *************************  FACILITIES ************************* -->
   <div class="facilities section" id="facilities">
 		<div class="headers">
-			<h1 >FACILITIES</h1>
+			<h1>FACILITIES</h1>
 		</div>
 		<div class="fling-minislide">
 			<img src="images/facilities7.png" alt="Slide 8">
@@ -300,7 +307,7 @@
 <!-- ************************* TRAINERS ************************* -->
   <div class="personal trainers section" id="trainers">
 		<div class="headers">
-			<h1>TRAINERS</h1>
+			<h1>TRAINING</h1>
 		</div>
 		<div class="trainerbgi">
 			<h2>Why Take Personal Training?</h2>
@@ -333,7 +340,7 @@
 				 to keep each and every session fresh and varied.<br>
 				 Many of these exercises you probably can’t do safely<br>
 				 or as effectively if you were to do them alone.<br>
-				 This in turn keeps you working in manner to maximize your results..</p>
+				 This in turn keeps you working in manner to maximize your results..</p><br>
 		</div>
   </div>
 
@@ -377,7 +384,7 @@
 					<p>Card Number<br><input type="text" name="cardnumbertext" size="16" maxlength="16"></p>
 					<p><input type="submit" name="submit button" value="Join"></p>
 				</fieldset>
-			</form>
+			</form><br>
 		</div>
 		<h5>* : info needed for for special subscription gym room entry.</h5>
   </div>
@@ -391,30 +398,79 @@
 		<table>
 			<thead>
 				<tr>
-					<th></th><th>SATURDAY</th><th>SUNDAY</th><th>MONDAY</th><th>TUESDAY</th><th>WEDNESDAY</th><th>THURSDAY</th>
+					<th></th>
+					<th>SATURDAY</th>
+					<th>SUNDAY</th>
+					<th>MONDAY</th>
+					<th>TUESDAY</th>
+					<th>WEDNESDAY</th>
+					<th>THURSDAY</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th>9:00am</th><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
+					<th>9:00am</th>
+					<td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td>
+					<td></td>
+					<td><img src="images/membership3.png" alt="Core(Katia)"></td>
+					<td></td>
+					<td></td>
+					<td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
 				</tr>
 				<tr>
-					<th>10:00am</th><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td>
+					<th>10:00am</th>
+					<td></td>
+					<td><img src="images/membership3.png" alt="Core(Katia)"></td>
+					<td></td>
+					<td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td>
+					<td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td>
+					<td></td>
 				</tr>
 				<tr>
-					<th>11:00am</th><td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td><td></td><td><img src="images/membership3.png" alt="Core(Katia)"></td>
+					<th>11:00am</th>
+					<td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"></td>
+					<td></td>
+					<td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
+					<td></td>
+					<td></td>
+					<td><img src="images/membership3.png" alt="Core(Katia)"></td>
 				</tr>
 				<tr>
-					<th>12:00pm</th><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td></td>
+					<th>12:00pm</th>
+					<td></td>
+					<td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
+					<td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td>
+					<td></td>
+					<td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td>
+					<td></td>
 				</tr>
 				<tr>
-					<th>4:00pm</th><td> <img src="images/membership4.png" alt="Grit-Combat(Ruby)"> </td><td></td><td></td><td></td><td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td><td></td>
+					<th>4:00pm</th>
+					<td> <img src="images/membership4.png" alt="Grit-Combat(Ruby)"> </td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><img src="images/membership2.png" alt="Zumba Fitness(Teya)"></td>
+					<td></td>
 				</tr>
 				<tr>
-					<th>5:00pm</th><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td><td><img src="images/membership3.png" alt="Core(Katia)"></td><td></td><td></td>
+					<th>5:00pm</th>
+					<td><img src="images/membership3.png" alt="Core(Katia)"></td>
+					<td></td>
+					<td><img src="images/membership1.png" alt="LesMills BODYPUMP(Ahmad)"></td>
+					<td><img src="images/membership3.png" alt="Core(Katia)"></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr>
-					<th>6:00pm</th><td>  </td><td><img src="images/membership4.png"  alt="Grit-Combat(Ruby)"/></td><td></td><td></td><td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td><td></td>
+					<th>6:00pm</th>
+					<td></td>
+					<td><img src="images/membership4.png" alt="Grit-Combat(Ruby)"/>
+					</td>
+					<td></td>
+					<td></td>
+					<td><img src="images/membership1.png"  alt="LesMills BODYPUMP(Ahmad)"/></td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
@@ -438,7 +494,7 @@
 						<p>MESSAGE:<textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></p>
 						<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
 					</form>
-			</div>
+			</div><br>
 		</div>
 	</div>
 
@@ -460,7 +516,7 @@
 				  and you can work full-time,<br>
 					you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com" style="color:white;">SilverLineGym@Gmail.com</a></h4>
 					<br><br>
-		</div>
+		</div><br>
 	</div>
 
 
