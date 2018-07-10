@@ -8,9 +8,12 @@
 	<style>
 
 	/* options for the whole page : */
+	body, html {
+	    height: 100%; /*for the main full page image*/
+	}
 	body {
 		background-color:#202020;
-		margin: 0px 15%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
+		margin: 0px 5%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
 	}
 
 	/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
@@ -18,27 +21,32 @@
 	:target:before {
 	  content:"";
 		display:block;
-		height:175px; /* fixed header's(sticky) height, so it would go to the correct position */
-		margin:-175px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
+		height:100px; /* fixed header's(sticky) height, so it would go to the correct position */
+		margin:-100px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
 	}
 
 	/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
 	.sticky {
-    position: sticky; /* the type of the position */
+    position: fixed; /* the type of the position */
     top: 0; /* needed to make sticky work */
     background-color:black;
+		width:100%;
+		right:0%;
+
 	  z-index:9999; /* so it would appear above anything on the page when scrolling down*/
-	  margin:0px -21.2%; /* to make it fit the width of the page right */
+	  /*margin:0px -21.2%;*/ /* to make it fit the width of the page right */
+
 	}
 
 	/* style of the menus in the fixed header (horizontal,in center,black background)*/
 	.sticky ul {
 		list-style-type: none;
-		margin: 0 auto;
+		margin:0px 0px 2% 11%;
 		padding: 0;
 		overflow: hidden;
 		background-color: black;
-		text-align:center;
+		text-align:right;
+		display: inline-block;
 	}
 
 	/* needed to make menus appear horizontally*/
@@ -57,7 +65,7 @@
 
 	/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
 	.sticky li a:hover {
-		background-color: #111;
+		background-color: #C0C0C0;
 	}
 
 	/* for titles of sections: */
@@ -78,7 +86,7 @@
 	/*for the actual container of the images:*/
   .fling-minislide {
 		width:100%;
-		height:500px;
+		height:600px;
 		overflow:hidden;
 		position:relative;
 	}
@@ -89,7 +97,7 @@
     animation:fling-minislide 40s infinite;
     opacity:0;
     width: 100%;
-    height: 500px;
+    height: 600px;
   }
 
 	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
@@ -139,14 +147,26 @@
 	}
 
 	/* this is used to make the text appear inside the image on the home section*/
-  .centered {
-		color:#C0C0C0;
+  .centeredtext {
+		color:white;
 		font-family:impact;
 		position:absolute; /* needed for correct positioning inside the image */
-		top: 42%;left: 50%; /* needed for correct positioning inside the image */
+		top: 40%;left: 50%; /* needed for correct positioning inside the image */
 		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
-		font-size:35px;
-		opacity:0.85;
+		font-size:3em;
+  }
+
+	.centeredbutton {
+		color:black;
+		background-color:#C0C0C0;
+		font-family:impact;
+		border:none;
+		text-decoration: none;
+		cursor:pointer;
+		position:absolute; /* needed for correct positioning inside the image */
+		top: 60%;left: 50%; /* needed for correct positioning inside the image */
+		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
+		font-size:3em;
   }
 
 	table {
@@ -169,12 +189,12 @@
 		background-image:url("images/bgi0.png");
 		background-size: cover;
 	}
-	
+
 	.aboutbgi p {
 		color:white;
 		font-weight:bold;
 	}
-	
+
 	.trainerbgi {
 		background-image:url("images/bgi1.png");
 		background-size: cover;
@@ -192,7 +212,7 @@
 	.membershipbgi {
 		background-image:url("images/bgi2.png");
 		background-size: cover;
-	}
+		}
 
 	.contactbgi {
 		background-image:url("images/bgi3.png");
@@ -202,67 +222,76 @@
 	.careerbgi {
 		background-image:url("images/bgi4.png");
 		background-size: cover;
-	}
+		}
 
+  .mainbgi {
+		background-image:url("images/bgiF.png");
+		height:100%;
+		margin:0px;
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+			}
   </style>
 </head>
 <body>
 <!-- ************************* NAVIGATION BAR ************************* -->
   <!-- navigation logo/name -->
   <div class ="sticky">
-    <img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
-		<img src="images/name.png" alt="Silverline Gym Name" width="110" height="110">
-    <div class="stickynav">
-			<!-- navigation buttons -->
-			<ul>
-				<li><a href="#top">HOME</a></li>
-				<li><a href="#about">ABOUT US</a></li>
-				<li><a href="#facilities">FACILITIES</a></li>
-				<li><a href="#trainers">TRAINING</a></li>
-				<li><a href="#memberships">MEMBERSHIPS</a></li>
-				<li><a href="#time">TIME TABLE</a></li>
-				<li><a href="#contact">CONTACT US</a></li>
-				<li><a href="#careers">CAREERS</a></li>
-			</ul>
-			<hr style="height: 5px;background-color:white;color:white;">
-    </div>
-  </div>
+    <span class="stickyImage">
+			<img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
+			<img src="images/name.png" alt="Silverline Gym Name" width="110" height="110">
+		</span>
+			<!-- navigation bar buttons -->
+		<ul>
+			<li><a href="#top">HOME</a></li>
+			<li><a href="#about">ABOUT US</a></li>
+			<li><a href="#facilities">FACILITIES</a></li>
+			<li><a href="#trainers">TRAINING</a></li>
+			<li><a href="#memberships">MEMBERSHIPS</a></li>
+			<li><a href="#time">TIME TABLE</a></li>
+			<li><a href="#contact">CONTACT US</a></li>
+			<li><a href="#careers">CAREERS</a></li>
+		</ul>
 
+  </div>
+<!-- *************************  ************************* -->
+  <div class ="mainbgi">
+			 <span class='centeredtext'><h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1></span>
+			 <a href="#memberships"><button class='centeredbutton' type="button">Join Today</button></a>
+	</div>
 
 <!-- ************************* MAIN ************************* -->
   <!-- image + text inside it -->
-  <div class="main-section">
+<!--  <section class="main-section">
 		<div class="main-image">
 			<img src="images/weightlifting-main.png" alt="main" style="1;display: block;margin-left: auto;margin-right: auto;width: 50%;">
-			<div class="centered">
-			 <h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1>
-		 </div>
+
 		</div>
-		<!-- the paragraph in main -->
+
 		<div id="Main">
 			<h1 style="background-color:#202020;color:#C0C0C0;font-family:verdana;">WELCOME TO <em>Silverline Gym&trade;</em> JO</h1>
-			<p>We are the original, the place where it all began.<br><br>
+			 <p>We are the original, the place where it all began.<br><br>
 			   More than 20 years ago, Armand Moreno opened a modest fitness center in Kansas, Texas and began a tradition of commitment, passion and dedication that is now practiced at more than 30 locations across the globe.<br><br>
 			   Our gyms are built to help people realize their goals and find their inner strength. We combine the most diverse amenities in the industry with the best personal training to deliver the ultimate fitness experience.<br><br>
 			   Strength comes in many forms, and for more than 20 years, we have helped people around the globe find theirs.<br><br>
 			   When Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong>, he began a tradition of commitment, passion and dedication that is still practiced today.<br><br>
-			   Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p>
+			   Combine that with our best-in-the-business personal trainers and you have an unmatched fitness experience.</p> .
 			<h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
 		</div>
-  </div>
+  </section> -->
 
 
 <!-- ************************* ABOUT US ************************* -->
-  <div class="about us section" id="about">
-		<div class="headers">
-			<h1 >ABOUT US</h1>
-		</div>
+  <section class="about us section" id="about">
 		 <div>
 			<div class="aboutbgi">
+				<h1 >ABOUT US</h1>
 				<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
 				   It was located in Kansas,Texas. It offered basic fitness machines and training.<br>
 				   But nevertheless, Armand's Gym offered the chance for fitness enthusiasts<br>
-				   the family and enviroment they needed to grow and achieve.</p>		
+				   the family and enviroment they needed to grow and achieve.</p>
 				<p>The breakthrough came when the 4th branch was opened.<br>
 				   It was larger than any branch before, and offered accomodations and facilities<br>
 				   the likes the area had never seen. This was the beginning of Silveline Gym's success story.</p>
@@ -283,11 +312,11 @@
 				   in the country, and thus offering one of the best training experiences that can be had in the region.</p><br>
 			</div>
 		</div>
-  </div>
+  </section>
 
 
 <!-- *************************  FACILITIES ************************* -->
-  <div class="facilities section" id="facilities">
+  <section class="facilities section" id="facilities">
 		<div class="headers">
 			<h1>FACILITIES</h1>
 		</div>
@@ -301,15 +330,14 @@
 			<img src="images/facilities1.png" alt="Slide 2">
 			<img src="images/facilities0.png" alt="Slide 1">
 		</div>
-  </div>
+  </section>
 
 
 <!-- ************************* TRAINERS ************************* -->
-  <div class="personal trainers section" id="trainers">
-		<div class="headers">
-			<h1>TRAINING</h1>
-		</div>
+  <section class="personal trainers section" id="trainers">
+
 		<div class="trainerbgi">
+			<h1>TRAINING</h1>
 			<h2>Why Take Personal Training?</h2>
 			<p>People take Personal Training for many different reasons but generally they have a goal<br>
 			   or a result they want to achieve. Sometimes it is appearance, health or even performance.<br>
@@ -342,15 +370,13 @@
 				 or as effectively if you were to do them alone.<br>
 				 This in turn keeps you working in manner to maximize your results..</p><br>
 		</div>
-  </div>
+  </section>
 
 
 <!-- ************************* MEMBERSHIPS ************************* -->
-  <div class="memberships section" id="memberships">
-		<div class="headers">
+  <section class="memberships section" id="memberships">
+			<div class="membershipbgi">
 			<h1>MEMBERSHIPS</h1>
-		</div>
-		<div class="membershipbgi">
 			<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
 			entirely online!</h2>
 			<h3>Just enter the required info below to register:<br></h3>
@@ -387,15 +413,15 @@
 			</form><br>
 		</div>
 		<h5>* : info needed for for special subscription gym room entry.</h5>
-  </div>
+  </section>
 
 
 <!-- ************************* TIME TABLE ************************* -->
-  <div class="time table section" id="time">
+  <section class="time table section" id="time">
 		<div class="headers">
 			<h1>TIME TABLE</h1>
 		</div>
-		<table>
+		<table align="center">
 			<thead>
 				<tr>
 					<th></th>
@@ -476,35 +502,32 @@
 		</table>
     <p>Notes : - Friday is a vacation day for <strong><em>Silverline Gym&trade;</em></strong>.<br>&emsp;&emsp;&emsp;
 			         - Special Subscription courses' rooms are in the top floor.</p>
-  </div>
+  </section>
 
 
 <!-- *************************CONTACT US ************************* -->
-  <div class="contact us section" id="contact">
-		<div class="headers">
-			<h1>CONTACT US</h1>
-		</div>
-		<!-- CONTACT FORM -->
+  <section class="contact us section" id="contact">
+			<!-- CONTACT FORM -->
 		<div class="contactbgi">
+			<h1>CONTACT US</h1>
 			<div class="contactform">
 					<form method="post" action="#">
-						<p>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;" ></p>
-						<p>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;" ></p>
-						<p>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
-						<p>MESSAGE:<textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></p>
+						<p><label>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;"></label></p>
+						<p><label>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;"></label></p>
+						<p><label>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="\d{3}+\d{3}+\d{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
+						<p><label>MESSAGE:<br><textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></label></p>
 						<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
 					</form>
 			</div><br>
 		</div>
-	</div>
+	</section>
 
 <!-- ************************* CAREERS ************************* -->
-  <div class="careers section" id="careers">
-		<div class="headers">
-			<h1>CAREERS</h1>
-		</div>
+  <section class="careers section" id="careers">
+
 		<div class="careerbgi">
-		  <h4>Silver Line Gym is looking for professionals in the following fields:</h4>
+<h1>CAREERS</h1>
+			<h3>Silver Line Gym is looking for professionals in the following fields:</h3>
 		  <ul>
 				<li>Personal Trainers </li>
 				<li>group Exercise Instructors</li>
@@ -517,7 +540,7 @@
 					you can apply by sending in your CV to <a href="mailto:SilverLineGym@Gmail.com" style="color:white;">SilverLineGym@Gmail.com</a></h4>
 					<br><br>
 		</div><br>
-	</div>
+	</section>
 
 
 <!-- ************************* FOOTER ************************* -->
