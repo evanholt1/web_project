@@ -29,19 +29,32 @@
 	.sticky {
     position: fixed; /* the type of the position */
     top: 0; /* needed to make sticky work */
-    background-color:black;
+    background-color:rgba(0,0,0,0.85); /* used rgba so that we override opacity for a child element*/
 		width:100%;
 		right:0%;
 
-	  z-index:9999; /* so it would appear above anything on the page when scrolling down*/
+	  z-index:10; /* so it would appear above anything on the page when scrolling down*/
 	  /*margin:0px -21.2%;*/ /* to make it fit the width of the page right */
 
 	}
 
+	.sticky2 { /*for the logo/name on top*/
+		position: fixed; /* the type of the position */
+		background-color:rgba(0,0,0,0.85);
+		width:20%;
+		float: left;
+		z-index:11; /* so it would appear above anything on the page when scrolling down*/
+		margin-left: -5%;
+
+    clip-path: polygon(0 0, 100% 0%, 83% 100%, 0% 100%);
+  );
+	}
+
+
 	/* style of the menus in the fixed header (horizontal,in center,black background)*/
 	.sticky ul {
 		list-style-type: none;
-		margin:0px 0px 2% 11%;
+		margin:1% 0px 0px 30%;
 		padding: 0;
 		overflow: hidden;
 		background-color: black;
@@ -68,6 +81,9 @@
 		background-color: #C0C0C0;
 	}
 
+
+
+	}
 	/* for titles of sections: */
 	.headers {
 		color:#C0C0C0;
@@ -76,8 +92,10 @@
 	}
 
 	/* for almost all the body's text : */
-	p ,th , .careers, .memberships {
+	p ,th , .careers, .memberships ,h1.section-headers {
 		color:white;
+		line-height:150%;
+		font-family: arial;
 	}
 
 	/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
@@ -94,7 +112,7 @@
 	/*for the images themselves*/
 	.fling-minislide img  {
     position:absolute;
-    animation:fling-minislide 40s infinite;
+    animation:fling-minislide 32s infinite; /* was 40,now 32*/
     opacity:0;
     width: 100%;
     height: 600px;
@@ -103,14 +121,14 @@
 	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
     the images are placed in reverse order */
 	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
-	.fling-minislide img:nth-child(8){animation-delay:0s;}
-	.fling-minislide img:nth-child(7){animation-delay:5s;}
-	.fling-minislide img:nth-child(6){animation-delay:10s;}
-	.fling-minislide img:nth-child(5){animation-delay:15s;}
-	.fling-minislide img:nth-child(4){animation-delay:20s;}
-	.fling-minislide img:nth-child(3){animation-delay:25s;}
-	.fling-minislide img:nth-child(2){animation-delay:30s;}
-	.fling-minislide img:nth-child(1){animation-delay:35s;}
+	.fling-minislide img:nth-child(8){animation-delay:0s;} /*each was 5 seconds apart,now 4*/
+	.fling-minislide img:nth-child(7){animation-delay:4s;}
+	.fling-minislide img:nth-child(6){animation-delay:8s;}
+	.fling-minislide img:nth-child(5){animation-delay:12s;}
+	.fling-minislide img:nth-child(4){animation-delay:16s;}
+	.fling-minislide img:nth-child(3){animation-delay:20s;}
+	.fling-minislide img:nth-child(2){animation-delay:24s;}
+	.fling-minislide img:nth-child(1){animation-delay:28s;}
 
 
 	/* for the page's forms */
@@ -183,6 +201,9 @@
 	}
 	td img {
 		width:151px;
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
 	}
 
   .aboutbgi {
@@ -231,7 +252,11 @@
 		background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+		background-attachment: fixed;
+			}
 
+			.about us section {
+				margin-top: -100px;
 			}
   </style>
 </head>
@@ -239,10 +264,7 @@
 <!-- ************************* NAVIGATION BAR ************************* -->
   <!-- navigation logo/name -->
   <div class ="sticky">
-    <span class="stickyImage">
-			<img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
-			<img src="images/name.png" alt="Silverline Gym Name" width="110" height="110">
-		</span>
+
 			<!-- navigation bar buttons -->
 		<ul>
 			<li><a href="#top">HOME</a></li>
@@ -256,6 +278,12 @@
 		</ul>
 
   </div>
+	<div class="sticky2">
+		<span class="stickyImage">
+			<img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
+			<img src="images/name.png" alt="Silverline Gym Name" width="110" height="110">
+		</span>
+	</div>
 <!-- *************************  ************************* -->
   <div class ="mainbgi">
 			 <span class='centeredtext'><h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1></span>
@@ -287,7 +315,7 @@
   <section class="about us section" id="about">
 		 <div>
 			<div class="aboutbgi">
-				<h1 >ABOUT US</h1>
+				<h1 class='section-headers'>ABOUT US</h1>
 				<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
 				   It was located in Kansas,Texas. It offered basic fitness machines and training.<br>
 				   But nevertheless, Armand's Gym offered the chance for fitness enthusiasts<br>
@@ -318,7 +346,7 @@
 <!-- *************************  FACILITIES ************************* -->
   <section class="facilities section" id="facilities">
 		<div class="headers">
-			<h1>FACILITIES</h1>
+			<h1 class='section-headers'>FACILITIES</h1>
 		</div>
 		<div class="fling-minislide">
 			<img src="images/facilities7.png" alt="Slide 8">
@@ -337,7 +365,7 @@
   <section class="personal trainers section" id="trainers">
 
 		<div class="trainerbgi">
-			<h1>TRAINING</h1>
+			<h1 class='section-headers'>TRAINING</h1>
 			<h2>Why Take Personal Training?</h2>
 			<p>People take Personal Training for many different reasons but generally they have a goal<br>
 			   or a result they want to achieve. Sometimes it is appearance, health or even performance.<br>
@@ -376,7 +404,7 @@
 <!-- ************************* MEMBERSHIPS ************************* -->
   <section class="memberships section" id="memberships">
 			<div class="membershipbgi">
-			<h1>MEMBERSHIPS</h1>
+			<h1 class='section-headers'>MEMBERSHIPS</h1>
 			<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
 			entirely online!</h2>
 			<h3>Just enter the required info below to register:<br></h3>
@@ -385,7 +413,7 @@
 				<fieldset> <!-- draws the box around the form -->
 					<legend><h2>MEMBER INFORMATION:</h2></legend> <!-- the caption for the fieldset -->
 					<p>NAME<br><input type="text" name="inputname" maxlength="30" size="20"></p>
-					<p>4-DIGIT PASSWORD*<br><input type="password" name="inputpassword" size="1" maxlength='4'></p><!--size is less than max length because padding makes the interior size bigger-->
+					<p>4-DIGIT PASSWORD*<br><input type="password" pattern="\d{4}" name="inputpassword" size="1" maxlength='4'></p><!--size is less than max length because padding makes the interior size bigger-->
 					<h3>Subscription Period:</h3>
 					<div class='InputNeedingAlign'>
 						<p><input type="radio" name="DurationofSubscriptionradio" value="One Month - 50JDs ">One Month - 50JDs</p>
@@ -395,11 +423,11 @@
 					</div>
 					<h3>Special Subscriptions*:</h3>
 					<div class='InputNeedingAlign'>
-						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">None</p>
-						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">LesMills BODYPUMP</p>
-						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Zumba Fitness</p>
-						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Core</p>
-						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Grit-Combat</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">None**</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">LesMills BODYPUMP**</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Zumba Fitness**</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Core**</p>
+						<p><input type="checkbox" name="SpecialSubscriptionscheckbox">Grit-Combat**</p>
 					</div>
 					<p>Payment Method </p>
 					<select>
@@ -412,14 +440,15 @@
 				</fieldset>
 			</form><br>
 		</div>
-		<h5>* : info needed for for special subscription gym room entry.</h5>
+		<h4>*  Info required for Special Subscription Gym registration & room entry.</h4>
+		<h4>**  Each Special Subscription Gym memebership costs 40JDs monthly.</h4>
   </section>
 
 
 <!-- ************************* TIME TABLE ************************* -->
   <section class="time table section" id="time">
 		<div class="headers">
-			<h1>TIME TABLE</h1>
+			<h1 class='section-headers'>TIME TABLE</h1>
 		</div>
 		<table align="center">
 			<thead>
@@ -509,7 +538,7 @@
   <section class="contact us section" id="contact">
 			<!-- CONTACT FORM -->
 		<div class="contactbgi">
-			<h1>CONTACT US</h1>
+			<h1 class='section-headers'>CONTACT US</h1>
 			<div class="contactform">
 					<form method="post" action="#">
 						<p><label>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;"></label></p>
@@ -526,7 +555,7 @@
   <section class="careers section" id="careers">
 
 		<div class="careerbgi">
-<h1>CAREERS</h1>
+<h1 class='section-headers'>CAREERS</h1>
 			<h3>Silver Line Gym is looking for professionals in the following fields:</h3>
 		  <ul>
 				<li>Personal Trainers </li>
