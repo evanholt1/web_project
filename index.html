@@ -258,6 +258,20 @@
 			.about us section {
 				margin-top: -100px;
 			}
+
+			.flex-container {
+  display: flex;
+  background-color: #202020;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.flex-container > div {
+  height:400px;
+	width:428px;
+	clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+	text-align: center;
+}
   </style>
 </head>
 <body>
@@ -309,7 +323,11 @@
 			<h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
 		</div>
   </section> -->
-
+	<div class="flex-container">
+	  <div><img src="images/bgi2.png"></div>
+	  <div><img src="images/bgi3.png"></div>
+	  <div><img src="images/bgi4.png"></div>
+	</div>
 
 <!-- ************************* ABOUT US ************************* -->
   <section class="about us section" id="about">
