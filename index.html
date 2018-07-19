@@ -71,8 +71,10 @@
 	.sticky li a {
 		display: inline-block;
 		color: white;
+		text-shadow: 2px 2px 4px #000000;
 		text-align: center;
 		padding: 14px 16px;
+		transition-duration: 0.4s;
 		text-decoration: none; /* to remove the underline of the links */
 	}
 
@@ -102,33 +104,62 @@
 	 it's used so facilities' animation works */
 
 	/*for the actual container of the images:*/
-  .fling-minislide {
-		width:100%;
-		height:600px;
-		overflow:hidden;
-		position:relative;
-	}
+	/*.facilites1{position:absolute;
+                    z-index:1;
+                    top:1500px;
+                    left:40px;
 
-	/*for the images themselves*/
-	.fling-minislide img  {
-    position:absolute;
-    animation:fling-minislide 32s infinite; /* was 40,now 32*/
-    opacity:0;
-    width: 100%;
-    height: 600px;
-  }
+                   }*/
+        /*.facilites2{position:absolute;
+                    z-index:2;
+                    top:1520px;
+                    left:60px;
+                   }*/
+        /*.facilites3{position:absolute;
+                    z-index:3;
+                    top:1540px;
+                    left:80px;
+                   }*/
+        /*.facilites4{position:absolute;
+                    z-index:4;
+                    top:1560px;
+                    left:100px;
+                   }*/
+        /*.facilites5{position:absolute;
+                    z-index:5;
+                    top:1580px;
+                    left:120px;
+                   }*/
+        /*.facilites6{position:absolute;
+                    z-index:6;
+                    top:1600px;
+                    left:140px;
+                   }*/
+        /*.facilites7{position:absolute;
+                    z-index:7;
+                    top:1620px;
+                    left:160px;
+                   */
+        /*.facilites8{position:absolute;
+                    z-index:8;
+                    top:1640px;
+                    left:180px;
+                   }*/
 
-	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
-    the images are placed in reverse order */
-	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
-	.fling-minislide img:nth-child(8){animation-delay:0s;} /*each was 5 seconds apart,now 4*/
-	.fling-minislide img:nth-child(7){animation-delay:4s;}
-	.fling-minislide img:nth-child(6){animation-delay:8s;}
-	.fling-minislide img:nth-child(5){animation-delay:12s;}
-	.fling-minislide img:nth-child(4){animation-delay:16s;}
-	.fling-minislide img:nth-child(3){animation-delay:20s;}
-	.fling-minislide img:nth-child(2){animation-delay:24s;}
-	.fling-minislide img:nth-child(1){animation-delay:28s;}
+									  #facilities {
+									 	height:100%;
+									 	width:100%;
+									 }
+									 #facilities img {
+										 width:100vh;
+										 height:500px;
+
+									 }
+									 #facilities img:hover {
+										 z-index:10;
+									 }
+
+
 
 
 	/* for the page's forms */
@@ -166,7 +197,8 @@
 
 	/* this is used to make the text appear inside the image on the home section*/
   .centeredtext {
-		color:white;
+		color: white;
+    text-shadow: 2px 2px 4px #000000;
 		font-family:impact;
 		position:absolute; /* needed for correct positioning inside the image */
 		top: 40%;left: 50%; /* needed for correct positioning inside the image */
@@ -176,7 +208,8 @@
 
 	.centeredbutton {
 		color:black;
-		background-color:#C0C0C0;
+		text-shadow: 4px 4px 8px #C0C0C0;
+		background-color:white;
 		font-family:impact;
 		border:none;
 		text-decoration: none;
@@ -185,8 +218,16 @@
 		top: 60%;left: 50%; /* needed for correct positioning inside the image */
 		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
 		font-size:3em;
-  }
+		border-radius: 2px;
+		border: 2px solid black;
+		transition-duration: 0.3s;
+		padding:0.2em;
 
+  }
+	.centeredbutton:hover {
+	    background-color: #C0C0C0;
+	    color: white;
+	}
 	table {
 		border-collapse: collapse; /* to remove double borders */
 	}
@@ -259,19 +300,6 @@
 				margin-top: -100px;
 			}
 
-			.flex-container {
-  display: flex;
-  background-color: #202020;
-	flex-direction: row;
-	justify-content: center;
-}
-
-.flex-container > div {
-  height:400px;
-	width:428px;
-	clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
-	text-align: center;
-}
   </style>
 </head>
 <body>
@@ -301,7 +329,7 @@
 <!-- *************************  ************************* -->
   <div class ="mainbgi">
 			 <span class='centeredtext'><h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1></span>
-			 <a href="#memberships"><button class='centeredbutton' type="button">Join Today</button></a>
+			 <a href="#memberships"><button class='centeredbutton' type="button">JOIN TODAY</button></a>
 	</div>
 
 <!-- ************************* MAIN ************************* -->
@@ -323,11 +351,7 @@
 			<h2 style="color:#C0C0C0;"><em>Silverline Gym&trade;</em>... Become a Better You&trade; ."</h2>
 		</div>
   </section> -->
-	<div class="flex-container">
-	  <div><img src="images/bgi2.png"></div>
-	  <div><img src="images/bgi3.png"></div>
-	  <div><img src="images/bgi4.png"></div>
-	</div>
+
 
 <!-- ************************* ABOUT US ************************* -->
   <section class="about us section" id="about">
@@ -366,16 +390,15 @@
 		<div class="headers">
 			<h1 class='section-headers'>FACILITIES</h1>
 		</div>
-		<div class="fling-minislide">
-			<img src="images/facilities7.png" alt="Slide 8">
-			<img src="images/facilities6.png" alt="Slide 7">
-			<img src="images/facilities5.png" alt="Slide 6">
-			<img src="images/facilities4.png" alt="Slide 5">
-			<img src="images/facilities3.png" alt="Slide 4">
-			<img src="images/facilities2.png" alt="Slide 3">
-			<img src="images/facilities1.png" alt="Slide 2">
-			<img src="images/facilities0.png" alt="Slide 1">
-		</div>
+		<div class="facilitiesimgs"><img class="facilites1" src="images/facilities0.png" style="display: inline-block;margin: 0">
+					 <img class="facilites2" src="images/facilities1.png"  style="display: block;margin: 0 auto;top:14%;left:12%;">
+		 <img class="facilites3" src="images/facilities2.png" style="display: block;margin: 0 auto;top:12%;left:10%;">
+		<img class="facilites4" src="images/facilities3.png" style="display: block;margin: 0 auto;top:10%;left:8%;">
+		<img class="facilites5" src="images/facilities4.png" style="display: block;margin: 0 auto;top:8%;left:6%;">
+		<img class="facilites6" src="images/facilities5.png" style="display: block;margin: 0 auto;top:6%;left:4%;">
+		 <img class="facilites7" src="images/facilities6.png" style="display: block;margin: 0 auto;top:-30%;left:2%;">
+					<img class="facilites8" src="images/facilities7.png">
+				</div>
   </section>
 
 
