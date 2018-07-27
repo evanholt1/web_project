@@ -21,8 +21,8 @@
 	:target:before {
 	  content:"";
 		display:block;
-		height:100px; /* fixed header's(sticky) height, so it would go to the correct position */
-		margin:-100px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
+		height:93px; /* fixed header's(sticky) height, so it would go to the correct position */
+		margin:-93px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
 	}
 
 	/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
@@ -255,6 +255,76 @@
 		background-attachment: fixed;
 			}
 
+		.mainbgi ul { /*for diamond grid*/
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			margin:0;
+			padding:0;
+			width:600px;
+			height:150px;
+		}
+		.mainbgi ul li { /*for diamond grid*/
+			list-style: none;
+			position: absolute;
+			width:200px;
+			height:200px;
+			background:#000;
+			margin:-100px;
+			transform:rotate(45deg);
+			transition: .5s;
+			overflow:hidden;
+			opacity:0.5;
+		}
+		.mainbgi ul li:hover { /*for diamond grid*/
+			opacity:1;
+		}
+		.item1 { /*for diamond grid*/
+			top:0;
+			left:0;
+		}
+		.item2 { /*for diamond grid*/
+			bottom:0;
+			left:25%;
+		}
+		.item3 { /*for diamond grid*/
+			top:0;
+			left:50%;
+		}
+		.item4 { /*for diamond grid*/
+			bottom:0;
+			left:75%;
+		}
+		.item5 { /*for diamond grid*/
+			top:0;
+			left:100%;
+		}
+		.bg { /*for diamond grid*/
+			width:100%;
+			height:100%;
+			transform: rotate(-45deg) scale(1.42);
+		}
+		.item1 .bg { /*for diamond grid*/
+			background:url('images/bgi0.png');
+			background-size:cover;
+		}
+		.item2 .bg { /*for diamond grid*/
+			background:url('images/bgi1.png');
+			background-size:cover;
+		}
+		.item3 .bg { /*for diamond grid*/
+			background:url('images/bgi2.png');
+			background-size:cover;
+		}
+		.item4 .bg { /*for diamond grid*/
+			background:url('images/bgi3.png');
+			background-size:cover;
+		}
+		.item5 .bg { /*for diamond grid*/
+			background:url('images/bgi4.png');
+			background-size:cover;
+		}
 			.about us section {
 				margin-top: -100px;
 			}
@@ -286,8 +356,13 @@
 	</div>
 <!-- *************************  ************************* -->
   <div class ="mainbgi">
-			 <span class='centeredtext'><h1>&ensp;WELCOME TO<br>SILVERLINE GYM</h1></span>
-			 <a href="#memberships"><button class='centeredbutton' type="button">Join Today</button></a>
+			 <ul>
+				 <li class='item1'><div class='bg'></div></li>
+				 <li class='item2'><div class='bg'></div></li>
+				 <li class='item3'><div class='bg'></div></li>
+				 <li class='item4'><div class='bg'></div></li>
+				 <li class='item5'><div class='bg'></div></li>
+			 </ul>
 	</div>
 
 <!-- ************************* MAIN ************************* -->
