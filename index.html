@@ -5,330 +5,7 @@
 	<meta name="keywords" content="Silverline,Gym,Jo">
 	<meta name="description" content="The offical website for Silverline Gym Jo">
 	<title>SILVERLINE GYM&trade; Jo</title>
-	<style>
-
-	/* options for the whole page : */
-	body, html {
-	    height: 100%; /*for the main full page image*/
-	}
-	body {
-		background-color:#202020;
-		margin: 0px 5%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
-	}
-
-	/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
-  used to fix issue with sticky (position type) overlapping (being over another element)  when scrolling to a section above : */
-	:target:before {
-	  content:"";
-		display:block;
-		height:93px; /* fixed header's(sticky) height, so it would go to the correct position */
-		margin:-93px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
-	}
-
-	/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
-	.sticky {
-    position: fixed; /* the type of the position */
-    top: 0; /* needed to make sticky work */
-    background-color:rgba(0,0,0,0.85); /* used rgba so that we override opacity for a child element*/
-		width:100%;
-		right:0%;
-
-	  z-index:10; /* so it would appear above anything on the page when scrolling down*/
-	  /*margin:0px -21.2%;*/ /* to make it fit the width of the page right */
-
-	}
-
-	.sticky2 { /*for the logo/name on top*/
-		position: fixed; /* the type of the position */
-		background-color:rgba(0,0,0,0.85);
-		width:20%;
-		float: left;
-		z-index:11; /* so it would appear above anything on the page when scrolling down*/
-		margin-left: -5%;
-
-    clip-path: polygon(0 0, 100% 0%, 83% 100%, 0% 100%);
-  );
-	}
-
-
-	/* style of the menus in the fixed header (horizontal,in center,black background)*/
-	.sticky ul {
-		list-style-type: none;
-		margin:1% 0px 0px 30%;
-		padding: 0;
-		overflow: hidden;
-		background-color: black;
-		text-align:right;
-		display: inline-block;
-	}
-
-	/* needed to make menus appear horizontally*/
-	.sticky li {
-      display:inline;
-	}
-
-	/* style of the actual text(hyperlinks) of the menus of the navigation bar */
-	.sticky li a {
-		display: inline-block;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none; /* to remove the underline of the links */
-	}
-
-	/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
-	.sticky li a:hover {
-		background-color: #C0C0C0;
-	}
-
-
-
-	}
-	/* for titles of sections: */
-	.headers {
-		color:#C0C0C0;
-		font-family:verdana;
-		background-color:black;
-	}
-
-	/* for almost all the body's text : */
-	p ,th , .careers, .memberships ,h1.section-headers {
-		color:white;
-		line-height:150%;
-		font-family: arial;
-	}
-
-	/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
-	 it's used so facilities' animation works */
-
-	/*for the actual container of the images:*/
-  .fling-minislide {
-		width:100%;
-		height:600px;
-		overflow:hidden;
-		position:relative;
-	}
-
-	/*for the images themselves*/
-	.fling-minislide img  {
-    position:absolute;
-    animation:fling-minislide 32s infinite; /* was 40,now 32*/
-    opacity:0;
-    width: 100%;
-    height: 600px;
-  }
-
-	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
-    the images are placed in reverse order */
-	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
-	.fling-minislide img:nth-child(8){animation-delay:0s;} /*each was 5 seconds apart,now 4*/
-	.fling-minislide img:nth-child(7){animation-delay:4s;}
-	.fling-minislide img:nth-child(6){animation-delay:8s;}
-	.fling-minislide img:nth-child(5){animation-delay:12s;}
-	.fling-minislide img:nth-child(4){animation-delay:16s;}
-	.fling-minislide img:nth-child(3){animation-delay:20s;}
-	.fling-minislide img:nth-child(2){animation-delay:24s;}
-	.fling-minislide img:nth-child(1){animation-delay:28s;}
-
-
-	/* for the page's forms */
-	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text of input*/
-		margin: 8px 0; /* empty space around input*/
-		padding : 6px 6px; /* interior size of input*/
-		box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
-		background-color: #C0C0C0; /* box color */
-		color: black; /* text color */
-	}
-
-	/* footer(logo/name + social media links) style*/
-	footer {
-		background-color:black;
-		text-align:center; /* for images to go to center */
-	}
-
-	/* style for the forms */
-	.membershipform, .contactform {
-		margin: 0px 30%;
-		text-align:center;
-	}
-
-	/* for the text above the memberShipForm */
-	.memberships h2, .memberships h3 {
-		text-align:center;
-	}
-
-/* for the memberShipForm's radio & checkbox input types alignment */
-	.InputNeedingAlign {
-		position:relative;
-		left:40px;
-		text-align:left;
-	}
-
-	/* this is used to make the text appear inside the image on the home section*/
-  .centeredtext {
-		color:white;
-		font-family:impact;
-		position:absolute; /* needed for correct positioning inside the image */
-		top: 40%;left: 50%; /* needed for correct positioning inside the image */
-		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
-		font-size:3em;
-  }
-
-	.centeredbutton {
-		color:black;
-		background-color:#C0C0C0;
-		font-family:impact;
-		border:none;
-		text-decoration: none;
-		cursor:pointer;
-		position:absolute; /* needed for correct positioning inside the image */
-		top: 60%;left: 50%; /* needed for correct positioning inside the image */
-		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
-		font-size:3em;
-  }
-
-	table {
-		border-collapse: collapse; /* to remove double borders */
-	}
-
-	table, th, td {
-		border: 2px solid #C0C0C0;
-		background-color:black;
-	}
-
-	th {
-		color:white;
-	}
-	td img {
-		width:151px;
-		display: block;
-    margin-left: auto;
-    margin-right: auto;
-	}
-
-  .aboutbgi {
-		background-image:url("images/bgi0.png");
-		background-size: cover;
-	}
-
-	.aboutbgi p {
-		color:white;
-		font-weight:bold;
-	}
-
-	.trainerbgi {
-		background-image:url("images/bgi1.png");
-		background-size: cover;
-	}
-
-	.trainerbgi p  , .careerbgi p{
-		color:white;
-		font-size:17px;
-	}
-
-	.trainerbgi h2  {
-		color:#C0C0C0;
-	}
-
-	.membershipbgi {
-		background-image:url("images/bgi2.png");
-		background-size: cover;
-		}
-
-	.contactbgi {
-		background-image:url("images/bgi3.png");
-		background-size: cover;
-	}
-
-	.careerbgi {
-		background-image:url("images/bgi4.png");
-		background-size: cover;
-		}
-
-  .mainbgi {
-		background-image:url("images/bgiF.png");
-		height:100%;
-		margin:0px;
-		background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-		background-attachment: fixed;
-			}
-
-		.mainbgi ul { /*for diamond grid*/
-			position: absolute;
-			top:50%;
-			left:50%;
-			transform: translate(-50%,-50%);
-			margin:0;
-			padding:0;
-			width:600px;
-			height:150px;
-		}
-		.mainbgi ul li { /*for diamond grid*/
-			list-style: none;
-			position: absolute;
-			width:200px;
-			height:200px;
-			background:#000;
-			margin:-100px;
-			transform:rotate(45deg);
-			transition: .5s;
-			overflow:hidden;
-			opacity:0.5;
-		}
-		.mainbgi ul li:hover { /*for diamond grid*/
-			opacity:1;
-		}
-		.item1 { /*for diamond grid*/
-			top:0;
-			left:0;
-		}
-		.item2 { /*for diamond grid*/
-			bottom:0;
-			left:25%;
-		}
-		.item3 { /*for diamond grid*/
-			top:0;
-			left:50%;
-		}
-		.item4 { /*for diamond grid*/
-			bottom:0;
-			left:75%;
-		}
-		.item5 { /*for diamond grid*/
-			top:0;
-			left:100%;
-		}
-		.bg { /*for diamond grid*/
-			width:100%;
-			height:100%;
-			transform: rotate(-45deg) scale(1.42);
-		}
-		.item1 .bg { /*for diamond grid*/
-			background:url('images/bgi0.png');
-			background-size:cover;
-		}
-		.item2 .bg { /*for diamond grid*/
-			background:url('images/bgi1.png');
-			background-size:cover;
-		}
-		.item3 .bg { /*for diamond grid*/
-			background:url('images/bgi2.png');
-			background-size:cover;
-		}
-		.item4 .bg { /*for diamond grid*/
-			background:url('images/bgi3.png');
-			background-size:cover;
-		}
-		.item5 .bg { /*for diamond grid*/
-			background:url('images/bgi4.png');
-			background-size:cover;
-		}
-			.about us section {
-				margin-top: -100px;
-			}
-  </style>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- ************************* NAVIGATION BAR ************************* -->
@@ -350,18 +27,25 @@
   </div>
 	<div class="sticky2">
 		<span class="stickyImage">
-			<img src="images/logo.png" alt="Silverline Gym Logo" width="110" height="110">
+			<img src="images/newlogo.png" alt="Silverline Gym Logo" width="110" height="110">
 			<img src="images/name.png" alt="Silverline Gym Name" width="110" height="110">
 		</span>
 	</div>
 <!-- *************************  ************************* -->
-  <div class ="mainbgi">
+<video autoplay muted loop id="myVideo">
+<source src="video/video1.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+	<h1 class='centeredtext'>WELCOME TO SILVERLINE GYM</h1>
+	<div class ="mainbgi">
 			 <ul>
-				 <li class='item1'><div class='bg'></div></li>
-				 <li class='item2'><div class='bg'></div></li>
-				 <li class='item3'><div class='bg'></div></li>
-				 <li class='item4'><div class='bg'></div></li>
-				 <li class='item5'><div class='bg'></div></li>
+				 <li class='item1'><a href="#about"><div class='bg'><h5 class='gridtext'>ABOUT US</h5></div></a></li>
+				 <li class='item2'><a href="#facilities"><div class='bg'><h5 class='gridtext'>FACILITIES</h5></div></a></li>
+				 <li class='item3'><a href="#trainers"><div class='bg'><h5 class='gridtext'>TRAINING</h5></div></a></li>
+				 <li class='item4'><a href="#memberships"><div class='bg'><h5 class='gridtext'>MEMBERSHIPS</h5></div></a></li>
+				 <li class='item5'><a href="#time"><div class='bg'></div></a></li>
+				 <li class='item6'><a href="#contact"><div class='bg'><h5 class='gridtext'>CONTACT US</h5></div></a></li>
+				 <li class='item7'><a href="#careers"><div class='bg'></div></a></li>
 			 </ul>
 	</div>
 
@@ -390,7 +74,7 @@
   <section class="about us section" id="about">
 		 <div>
 			<div class="aboutbgi">
-				<h1 class='section-headers'>ABOUT US</h1>
+				<h2 class='section-headers'>ABOUT US</h2>
 				<p>More than 20 years ago, Armand Moreno opened the first <strong><em>Silverline Gym&trade;</em></strong> branch.<br><br>
 				   It was located in Kansas,Texas. It offered basic fitness machines and training.<br>
 				   But nevertheless, Armand's Gym offered the chance for fitness enthusiasts<br>
@@ -421,7 +105,7 @@
 <!-- *************************  FACILITIES ************************* -->
   <section class="facilities section" id="facilities">
 		<div class="headers">
-			<h1 class='section-headers'>FACILITIES</h1>
+			<h2 class='section-headers'>FACILITIES</h2>
 		</div>
 		<div class="fling-minislide">
 			<img src="images/facilities7.png" alt="Slide 8">
@@ -440,7 +124,7 @@
   <section class="personal trainers section" id="trainers">
 
 		<div class="trainerbgi">
-			<h1 class='section-headers'>TRAINING</h1>
+			<h2 class='section-headers'>TRAINING</h2>
 			<h2>Why Take Personal Training?</h2>
 			<p>People take Personal Training for many different reasons but generally they have a goal<br>
 			   or a result they want to achieve. Sometimes it is appearance, health or even performance.<br>
@@ -479,7 +163,7 @@
 <!-- ************************* MEMBERSHIPS ************************* -->
   <section class="memberships section" id="memberships">
 			<div class="membershipbgi">
-			<h1 class='section-headers'>MEMBERSHIPS</h1>
+			<h2 class='section-headers'>MEMBERSHIPS</h2>
 			<h2>With <em>Silverline Gym&trade;</em> Jo adopting the all-new E-REG&trade; technology, you are now able to register in the gym and become a member
 			entirely online!</h2>
 			<h3>Just enter the required info below to register:<br></h3>
@@ -523,9 +207,9 @@
 <!-- ************************* TIME TABLE ************************* -->
   <section class="time table section" id="time">
 		<div class="headers">
-			<h1 class='section-headers'>TIME TABLE</h1>
+			<h2 class='section-headers'>TIME TABLE</h2>
 		</div>
-		<table align="center">
+		<table class='table'>
 			<thead>
 				<tr>
 					<th></th>
@@ -613,12 +297,12 @@
   <section class="contact us section" id="contact">
 			<!-- CONTACT FORM -->
 		<div class="contactbgi">
-			<h1 class='section-headers'>CONTACT US</h1>
+			<h2 class='section-headers'>CONTACT US</h2>
 			<div class="contactform">
 					<form method="post" action="#">
 						<p><label>NAME<br><input placeholder="Your Full Name" type="text" name="Name" size="30" style="width:50%;"></label></p>
 						<p><label>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;"></label></p>
-						<p><label>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="\d{3}+\d{3}+\d{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
+						<p><label>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></label></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
 						<p><label>MESSAGE:<br><textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></label></p>
 						<input style="background-color:#C0C0C0;" type="submit" name="submitbutton" value="Send">
 					</form>
@@ -630,7 +314,7 @@
   <section class="careers section" id="careers">
 
 		<div class="careerbgi">
-<h1 class='section-headers'>CAREERS</h1>
+			<h2 class='section-headers'>CAREERS</h2>
 			<h3>Silver Line Gym is looking for professionals in the following fields:</h3>
 		  <ul>
 				<li>Personal Trainers </li>
@@ -650,13 +334,13 @@
 <!-- ************************* FOOTER ************************* -->
   <footer>
     <hr>
-		<img src="images/logo.png" alt="Silverline Gym Logo" width="130" height="130">
-		<img src="images/name.png" alt="Silverline Gym Name" width="130" height="130">
+		<img src="images/newlogofooter.png" alt="Silverline Gym Logo" width="130" height="130">
+		<img src="images/namefooter.png" alt="Silverline Gym Name" width="130" height="130">
 		<br>
 		<p>Follow us on:<br><br>
-			 <a href='http://www.facebook.com'><img src="images/facebook.png" alt="Silverline Gym Name" width="50" height="50"></a>
-			 <a href='http://www.twitter.com'><img src="images/twitter.png" alt="Silverline Gym Name" width="50" height="50"></a>
-			 <a href='http://www.instagram.com'><img src="images/instagram.png" alt="Silverline Gym Name" width="50" height="50"></a>
+			 <a href='http://www.facebook.com'><img src="images/facebook.png" alt="facebook link" width="50" height="50"></a>
+			 <a href='http://www.twitter.com'><img src="images/twitter.png" alt="twitter link" width="50" height="50"></a>
+			 <a href='http://www.instagram.com'><img src="images/instagram.png" alt="instagram link" width="50" height="50"></a>
 		</p>
   </footer>
 </body>
