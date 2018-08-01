@@ -94,7 +94,7 @@ input[type=text], input[type=password], input[type=tel], input[type=email] ,text
 	margin: 8px 0; /* empty space around input*/
 	padding : 6px 6px; /* interior size of input*/
 	box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
-	background-color: #fffbfbd1; /* box color */
+	background-color: #fffbfb; /* box color #fffbfbd1*/
 	color: black; /* text color */
 }
 
@@ -242,9 +242,9 @@ left: -25%;
 /* ***************************** ABOUT US ***************************** */		
 		
 .aboutbgi {
-	background-image:url("images/bgi0.png");
 	background-size: cover;
 	background-attachment: fixed;
+	margin-top:5%; /* so it wouldn't overlap the main */
 }
 
 .aboutbgi p {
@@ -266,6 +266,8 @@ left: -25%;
 }
 
 /*for the images themselves*/
+/*An animation lets an element gradually change from one style to another.
+	To use CSS animation, you must first specify some keyframes for the animation.*/
 .fling-minislide img  {
 	position:absolute;
 	animation:fling-minislide 32s infinite; /* was 40,now 32*/
@@ -276,9 +278,12 @@ left: -25%;
 
 /*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
 	the images are placed in reverse order */
+	/*The @keyframes rule specifies the animation code.
+		The animation is created by gradually changing from one set of CSS styles to another.
+		During the animation, you can change the set of CSS styles many times.*/
 @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
-.fling-minislide img:nth-child(8){animation-delay:0s;} /*each was 5 seconds apart,now 4*/
-.fling-minislide img:nth-child(7){animation-delay:4s;}
+.fling-minislide img:nth-child(8){animation-delay:0s;} /*The :nth-child(n) selector matches every element that is the nth child, regardless of type, of its parent.*/
+.fling-minislide img:nth-child(7){animation-delay:4s;} /*nth-child(1) gives to every first,nth-child(2) to every second,and so on...*/
 .fling-minislide img:nth-child(6){animation-delay:8s;}
 .fling-minislide img:nth-child(5){animation-delay:12s;}
 .fling-minislide img:nth-child(4){animation-delay:16s;}
@@ -368,6 +373,17 @@ td img {
 	background-size: cover;
 	}
 
-	
+/* ***************************** SEPERATE ***************************** */	
 
+.sec { text-align: center}
+.sidebar {
+	width: 100%;
+	height: 6750px;
 	
+}
+.sec div { text-align:center ; font-size:13pt ; font-weight:bolder }
+.sec body { background-color:#202020 }
+
+.sec header { padding: 1.0em ; color:white ; text-align: center }
+.sec p { color:white }
+.sec header { background-color: #666; padding: 3px; text-align: center; font-size: 15pt; color: white}

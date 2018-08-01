@@ -1,0 +1,394 @@
+	
+    div { text-align:center ; font-size:13pt ; font-weight:bolder }
+	body { background-color:#202020 }
+	
+	header { padding: 1.0em ; color:white ; text-align: center }
+	p { color:white }
+	header { background-color: #666; padding: 3px; text-align: center; font-size: 15pt; color: white}
+	.sec { text-align: center}
+		   .sidebar {
+    width: 100%;
+    height: 6750px;
+    
+}
+
+
+	
+	/* options for the whole page : */
+	body, html {
+	    height: 100%; /*for the main full page image*/
+	}
+	body {
+		background-color:#202020;
+		margin: 0px 5%; /* makes the writeable area smaller, 0px means not decreasing the size from the top or bottom, the 15% makes the usable area smaller from left and right*/
+	}
+
+	/* (taken from: https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors).
+  used to fix issue with sticky (position type) overlapping (being over another element)  when scrolling to a section above : */
+	:target:before {
+	  content:"";
+		display:block;
+		height:93px; /* fixed header's(sticky) height, so it would go to the correct position */
+		margin:-93px 0 0; /* negative fixed header height, so it woudln't add extra height above the about us section */
+	}
+
+	/* all .sticky are for the 'sticky' navigation bar and logo (the upper part of the page) */
+	.sticky {
+		  overflow: hidden;
+    position: fixed; /* the type of the position */
+    top: 0; /* needed to make sticky work */
+	 width: 100%;
+    background-color:#202020;/*rgba(32,32,32,0.85); previously used rgba so that we override opacity for a child element*/
+		width:100%;
+		right:0%;
+
+	  z-index:10; /* so it would appear above anything on the page when scrolling down*/
+	  /*margin:0px -21.2%;*/ /* to make it fit the width of the page right */
+
+
+ 
+	}
+
+	.sticky2 { /*for the logo/name on top*/
+		position: fixed; /* the type of the position */
+		background-color:#202020;/*rgba(32,32,32,0.85);*/
+		width:20%;
+		float: left;
+		z-index:11; /* so it would appear above anything on the page when scrolling down*/
+		margin-left: -5%;
+
+    clip-path: polygon(0 0, 100% 0%, 83% 100%, 0% 100%);
+	}
+
+
+	/* style of the menus in the fixed header (horizontal,in center,black background)*/
+	.sticky ul {
+		list-style-type: none;
+		margin:1% 0px 0px 30%;
+		padding: 0;
+		overflow: hidden;
+		background-color: #202020;
+		text-align:right;
+		display: inline-block;
+	}
+
+	/* needed to make menus appear horizontally*/
+	.sticky li {
+      display:inline;
+	}
+
+	/* style of the actual text(hyperlinks) of the menus of the navigation bar */
+	.sticky li a {
+		display: inline-block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none; /* to remove the underline of the links */
+	}
+
+	/* Change the link color of a navigation bar in sticky to #111 (black) on hover(when mouse is on it) */
+	.sticky li a:hover {
+		background-color: #C0C0C0;
+	}
+
+
+
+
+	/* for titles of sections: */
+	.headers {
+		color:#C0C0C0;
+		font-family:verdana;
+		background-color:black;
+	}
+
+	/* for almost all the body's text : */
+	p ,th , .careers, .memberships  {
+		color:white;
+		line-height:150%;
+		font-family: arial;
+		font-size:1.1em;
+	}
+	h2.section-headers{
+		color:white;
+		line-height:150%;
+		font-family: helvetica;
+		font-size:2em;
+	}
+	/* the following (fling mini-slide) was taken from https://www.hyde-design.co.uk/joomla-bites/80-create-a-css-slideshow-no-javascript-required .
+	 it's used so facilities' animation works */
+
+	/*for the actual container of the images:*/
+  .fling-minislide {
+		width:100%;
+		height:600px;
+		overflow:hidden;
+		position:relative;
+	}
+
+	/*for the images themselves*/
+	.fling-minislide img  {
+    position:absolute;
+    animation:fling-minislide 32s infinite; /* was 40,now 32*/
+    opacity:0;
+    width: 100%;
+    height: 600px;
+  }
+
+	/*each image stays for 5 seconds,the whole slideshow lasts 40 seconds
+    the images are placed in reverse order */
+	@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+	.fling-minislide img:nth-child(8){animation-delay:0s;} /*each was 5 seconds apart,now 4*/
+	.fling-minislide img:nth-child(7){animation-delay:4s;}
+	.fling-minislide img:nth-child(6){animation-delay:8s;}
+	.fling-minislide img:nth-child(5){animation-delay:12s;}
+	.fling-minislide img:nth-child(4){animation-delay:16s;}
+	.fling-minislide img:nth-child(3){animation-delay:20s;}
+	.fling-minislide img:nth-child(2){animation-delay:24s;}
+	.fling-minislide img:nth-child(1){animation-delay:28s;}
+
+
+	/* for the page's forms */
+	input[type=text], input[type=password], input[type=tel], input[type=email] ,textarea { /*to make the changes affect only the types password & text of input*/
+		margin: 8px 0; /* empty space around input*/
+		padding : 6px 6px; /* interior size of input*/
+		box-sizing: border-box; /*This makes sure that the padding and eventually borders are included in the total width and height of the elements.*/
+		background-color: #C0C0C0; /* box color */
+		color: black; /* text color */
+	}
+
+	/* footer(logo/name + social media links) style*/
+	footer {
+		background-color:black;
+		text-align:center; /* for images to go to center */
+	}
+
+	/* style for the forms */
+	.membershipform, .contactform {
+		margin: 0px 30%;
+		text-align:center;
+	}
+
+	/* for the text above the memberShipForm */
+	.memberships h2, .memberships h3 {
+		text-align:center;
+	}
+
+/* for the memberShipForm's radio & checkbox input types alignment */
+	.InputNeedingAlign {
+		position:relative;
+		left:40px;
+		text-align:left;
+	}
+
+	/* this is used to make the text appear inside the image on the home section*/
+  .centeredtext {
+		color: white;
+    font-family: impact;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+  }
+
+	.centeredbutton {
+		color:black;
+		background-color:#C0C0C0;
+		font-family:impact;
+		border:none;
+		text-decoration: none;
+		cursor:pointer;
+		position:absolute; /* needed for correct positioning inside the image */
+		top: 60%;left: 50%; /* needed for correct positioning inside the image */
+		transform: translate(-50%, -50%); /* needed for correct positioning inside the image */
+		font-size:3em;
+  }
+
+	table {
+		border-collapse: collapse; /* to remove double borders */
+	}
+
+	table, th, td {
+		border: 2px solid #C0C0C0;
+		background-color:black;
+	}
+
+	th {
+		color:white;
+	}
+	td img {
+		width:151px;
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+  .aboutbgi {
+		background-image:url("images/bgi0.png");
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	.aboutbgi p {
+		color:white;
+		font-weight:bold;
+		font-size:1.1em;
+	}
+
+	.trainerbgi {
+		background-image:url("images/bgi1.png");
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	.trainerbgi p  , .careerbgi p{
+		color:white;
+		font-size:1.2em;
+
+	}
+
+	.trainerbgi h2  {
+		color:#C0C0C0;
+		font-size:2em;
+	}
+
+	.membershipbgi {
+		background-image:url("images/bgi2.png");
+		background-size: cover;
+		background-attachment: fixed;
+		}
+
+	.contactbgi {
+		background-image:url("images/bgi3.png");
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	.careerbgi {
+		background-image:url("images/bgi4.png");
+		background-size: cover;
+		}
+
+  /*.mainbgi {
+		background-image:url("images/bgiF.png");
+		height:100%;
+		margin:0px;
+		background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+		background-attachment: fixed;
+			}*/
+
+		.mainbgi ul { /*for diamond grid*/
+			position: absolute;
+	    top: 70%;
+	    left: 50%;
+	    transform: translate(-50%,-50%);
+	    margin: 0;
+	    padding: 0;
+	    width: 600px;
+	    height: 150px;
+		}
+		.mainbgi ul li { /*for diamond grid*/
+			list-style: none;
+			position: absolute;
+			width:200px;
+			height:200px;
+			background:#000;
+			margin:-100px;
+			transform:rotate(45deg);
+			transition: .5s;
+			overflow:hidden;
+			opacity:0.5;
+		}
+		.mainbgi ul li:hover { /*for diamond grid*/
+			opacity:1;
+		}
+		.item1 { /*for diamond grid*/
+			top: 0;
+    left: -25%;
+		}
+		.item2 { /*for diamond grid*/
+			bottom:0;
+			left:0;
+		}
+		.item3 { /*for diamond grid*/
+			top:0;
+			left:25%;
+		}
+		.item4 { /*for diamond grid*/
+			bottom:0;
+			left:50%;
+		}
+		.item5 { /*for diamond grid*/
+			top:0;
+			left:75%;
+		}
+		.item6 { /*for diamond grid*/
+			bottom:0;
+			left:100%;
+		}
+		.item7 { /*for diamond grid*/
+			top:0;
+			left:125%;
+		}
+		.bg { /*for diamond grid*/
+			width:100%;
+			height:100%;
+			transform: rotate(-45deg) scale(1.42);
+		}
+		.item1 .bg { /*for diamond grid*/
+			background:url('images/bgi0.png');
+			background-size:cover;
+		}
+		.item2 .bg { /*for diamond grid*/
+			background:url('images/gridfacilities.png');
+			background-size:cover;
+		}
+		.item3 .bg { /*for diamond grid*/
+			background:url('images/bgi1.png');
+			background-size:cover;
+		}
+		.item4 .bg { /*for diamond grid*/
+			background:url('images/bgi2.png');
+			background-size:cover;
+		}
+		.item5 .bg { /*for diamond grid*/
+			background:url('images/gridtime.png');
+			background-size:cover;
+		}
+		.item6 .bg { /*for diamond grid*/
+			background:url('images/bgi3.png');
+			background-size:cover;
+		}
+		.item7 .bg { /*for diamond grid*/
+			background:url('images/gridcareers.png');
+			background-size:cover;
+
+		}
+
+		#myVideo { /*for main video*/
+			max-width: 100%;
+	    min-height: 100%;
+	    margin-top: 3%;
+		}
+
+		.gridtext {/*for text inside of grid*/
+			color: orange;
+	    font-family: impact;
+	    position: absolute;
+	    top: 25%;
+	    left: 50%;
+	    text-align: center;
+	    transform: translate(-50%, -50%);
+	    font-size: 1.8em;
+			user-select: none;/*so you can't select it*/
+	  }
+		#about {/*to lower video just a bit*/
+			margin-top:-3%;
+		}
+		.table { /*to position table*/
+			margin-left:auto;
+			margin-right:auto
+		}
