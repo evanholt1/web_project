@@ -82,7 +82,7 @@
 			</div>
 		</div>
 	</section>
-
+	<script src="random.js"></script> <!-- below the about us section becuase it didn't work when it was above it -->
 <!-- *************************  FACILITIES ************************* -->
 
 	<section class="facilities section" id="facilities">
@@ -142,7 +142,7 @@
 
 <!-- ************************* MEMBERSHIPS ************************* -->
 
-	<script src="total.js"></script>
+	<script src="membership.js"></script>
 	<section class="memberships section" id="memberships">
 		<div class="membershipbgi">
 			<h2 class='section-headers'>MEMBERSHIPS</h2>
@@ -169,7 +169,7 @@
 						<p><label><input type="checkbox" name="SpecialSubscriptionscheckbox" value="40" onchange="checkTotal()">Core**</label></p>
 						<p><label><input type="checkbox" name="SpecialSubscriptionscheckbox" value="40" onchange="checkTotal()">Grit-Combat**</label></p>
 					</div>
-					<p></label>Total: <input style="text-align:center;" type="text" size="2" name="total" value="0" readonly></label></p>
+					<p><label>Total: <input style="text-align:center;" type="text" size="2" name="total" value="0" readonly></label></p>
 					<p><label>Payment Method </label></p>
 					<select>
 						<option>Visa</option>
@@ -276,6 +276,7 @@
 
 <!-- *************************CONTACT US ************************* -->
 
+	<script src="contact.js"></script>
   <section class="contact us section" id="contact">
 			<!-- CONTACT FORM -->
 		<div class="contactbgi">
@@ -286,7 +287,7 @@
 						<p><label>E-MAIL<br><input placeholder="Your E-Mail Address" type="email" name="E-Mail" size="20" style="width:50%;"></label></p>
 						<p><label>PHONE NUMBER<br><input placeholder="### ### ####" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" name="PhoneNumber" size="12" maxlength="12" style="width:50%;" ></label></p> <!-- old pattern:\(\d{3}\)+\d{3}-\d{4} -->
 						<p><label>MESSAGE:<br><textarea placeholder="Write Your Message Here" cols="50" rows="10" ></textarea></label></p>
-						<input type="submit" name="submitbutton" value="Send">
+						<input type="submit" name="submitbutton" value="Send" onclick="alertcontact()">
 					</form>
 			</div><br>
 		</div>
@@ -323,6 +324,7 @@
 			 <a href='http://www.facebook.com'><img src="images/facebook.png" alt="facebook link" width="50" height="50"></a>
 			 <a href='http://www.twitter.com'><img src="images/twitter.png" alt="twitter link" width="50" height="50"></a>
 			 <a href='http://www.instagram.com'><img src="images/instagram.png" alt="instagram link" width="50" height="50"></a>
+			 <a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
 		</p>
   </footer>
 </body>
